@@ -44,9 +44,8 @@ body:
       description: Do you need to pay? (Subscription payment models are not accepted)
       options:
         - label: Free
+        required: true
         - label: One-time payment
-    validations:
-      required: true
       
   - type: dropdown
     id: open-source
