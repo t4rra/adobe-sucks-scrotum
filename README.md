@@ -2,10 +2,11 @@
 A.S.S., a website for alternatives to popular Adobe software.
 
 ## To-Do
-- [ ] Make HTML 
-- [ ] Style HTML 
-- [ ] Create issue templates
-- [ ] Deploy website
+- [ ] Make website
+    - [ ] Create HTML
+    - [ ] Style HTML w/CSS
+    - [ ] Depoly website 
+- [ ] Create issue templates/form
 - [ ] Create video for ASS
 
 ## Got a free alternative?
