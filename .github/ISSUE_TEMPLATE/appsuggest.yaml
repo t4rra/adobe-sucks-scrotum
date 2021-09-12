@@ -41,10 +41,9 @@ body:
     id: alt-app-pricing
     attributes:
       label: Alternative App Pricing
-      description: Do you need to pay? (Subscription payment models are not accepted)
+      description: Do you need to pay? (You can select more than one if the alternative app has multiple pricing options)
       options:
         - label: Free
-        required: true
         - label: One-time payment
       
   - type: dropdown
