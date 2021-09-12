@@ -27,3 +27,5 @@ body:
       label: Browser
       description: What browser did you see the issue on?
       placeholder: Chrome, Firefox, Safari, etc.
+    validations:
+      required: true
