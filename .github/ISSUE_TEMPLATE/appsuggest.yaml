@@ -54,8 +54,8 @@ body:
       label: Open Source
       description: Is it open source?
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
     validations:
       required: true
 
