@@ -37,14 +37,15 @@ body:
     validations:
       required: true
   
-  - type: checkboxes
+  - type: dropdown
     id: alt-app-pricing
     attributes:
       label: Alternative App Pricing
       description: Do you need to pay? (You can select more than one if the alternative app has multiple pricing options)
+      multiple: true
       options:
-        - label: Free
-        - label: One-time payment
+        - Free
+        - One-time payment
     validations:
       required: true
   - type: dropdown
