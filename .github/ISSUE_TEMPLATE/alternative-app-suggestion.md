@@ -23,7 +23,7 @@ Note: Please don't submit an alternative app that requires a subscription-based 
 [What alternative are you suggesting for that app?]
 
 # Reason (Optional)
-[Why is this a viable alternative?]
+[Why is this a viable alternative? Optional, but helps speed things up.]
 
 # Additional Comments (Optional)
 [Anything else to say?]
