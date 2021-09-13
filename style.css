@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: #e8f3ed;
+  background-color: #e8f3ed;
+  transition: background-color 0.5s ease;
+}
+
+@font-face {
+  font-family: "Monument Extended Regular";
+  src: url("/fonts/MonumentExtended-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monument Extended Black";
+  src: url("/fonts/MonumentExtended-Black.woff") format("woff");
+}
+
+header {
+  color: #111516;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bgtxt {
+  height: 0px;
+  overflow: hidden;
+}
+
+.links a {
+  color: #111516;
+}
+
+.header-bottom {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  font-style: italic;
+  padding-bottom: 15px;
+}
+
+header,
+footer {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header h1,
+footer h1 {
+  font-size: 4em;
+  font-family: "Monument Extended Black";
+}
+
+header p,
+footer p {
+  font-size: 1.5em;
+  font-family: "PT Mono", monospace;
+}
+
+footer .links {
+  font-size: 0.6em;
+  text-align: center;
+}
+
+footer .links a {
+  color: #e8f3ed;
+}
+
+section {
+  padding: 15px;
+}
+
+section a {
+  color: #e8f3ed;
+}
+
+summary,
+footer h2,
+header h2 {
+  font-family: "Monument Extended Regular";
+  font-size: 2em;
+}
+
+.altcontainer {
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+}
+
+details {
+  margin: 25px;
+  max-width: 50vw;
+}
+
+summary {
+  background-color: #e8f3ed;
+  color: #111516;
+  padding: 15px;
+  border-radius: 8px;
+
+}
+
+details .content {
+  color: #e8f3ed;
+  padding: 15px;
+  font-family: "PT Mono", monospace;
+  font-size: 1.2em;
+}
+
+details .content h3 {
+  margin-top: 5px;
+}
+
+details .content a {
+  color: #e8f3ed;
+}
+
+details .content .bottom-text {
+  margin: 10px 0 0 6px;
+}
+.keyitem {
+  display: flex;
+}
+
+.altapp {
+  display: flex;
+}
+
+.bg-dark {
+  background-color: #111516;
+}
