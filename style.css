@@ -35,7 +35,7 @@ header {
 }
 
 header .hero {
-  padding:0 0 0 15px;
+  padding: 0 0 0 15px;
 }
 
 header,
@@ -53,11 +53,12 @@ nav {
   margin-top: 15px;
   padding: 15px;
   border-radius: 8px;
+  transition-duration: 0.5s;
 }
 
 nav a {
   font-family: "PT Mono", monospace;
-  margin-right: 10px;
+  margin: 10px 10px 0 0;
   padding: 10px;
   border-radius: 6px;
   background-color: #111516;
@@ -119,7 +120,8 @@ footer .links {
   text-align: center;
 }
 
-footer .links a, footer section p a {
+footer .links a,
+footer section p a {
   color: #e8f3ed;
 }
 
@@ -158,4 +160,25 @@ h2 {
 
 .fg-light {
   color: #e8f3ed;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .hero h1 {
+    font-size: 10vw;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .altcontainer section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

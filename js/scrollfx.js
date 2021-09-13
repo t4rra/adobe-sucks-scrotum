@@ -5,7 +5,7 @@ const light = document.querySelectorAll("h1, h2:not(#navtitle), p, .links a, .ma
 window.onscroll = function () {
   stickynav();
   var top = window.scrollY;
-  if (top > window.innerHeight / 7) {
+  if (top > window.innerHeight / 10) {
     dark.classList.add("bg-dark");
     for (let i = 0; i < light.length; i++) {
       light[i].classList.add("fg-light");
