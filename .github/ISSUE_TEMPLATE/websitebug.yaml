@@ -1,0 +1,31 @@
+name: Website Bug/Issue Report
+description: See a problem with the website?
+title: "[Bug]: "
+labels: [bug]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!<br>
+        Please check the [issues](https://github.com/E-Soda/adobe-sucks-scrotum/issues) to see if your issue exists already. Feel free to submit an issue if your bug is new.<br>
+        Don't use this form if you are suggesting an alternative app, there is a [different form](https://github.com/E-Soda/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative%3A+%5BAdobe+App%5D+-+%5BAlternative%5D) for that.
+  - type: textarea
+    id: whats-the-issue
+    attributes:
+      label: "What's the issue?"
+      description: Please describe the problem in as much detail as possible with steps to reproduce it.
+      value: |
+        - Problem:
+        - Steps to reproduce:
+    validations:
+      required: true
+
+  - type: input
+    id: browsers
+    attributes:
+      label: Browser
+      description: What browser did you see the issue on?
+      placeholder: Chrome, Firefox, Safari, etc.
+    validations:
+      required: true
