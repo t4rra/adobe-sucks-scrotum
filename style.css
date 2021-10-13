@@ -15,9 +15,8 @@ html {
 
 body {
   color: #e8f3ed;
-  background-color: #e8f3ed;
-  overflow-y: hidden;
-  transition: background-color 0.5s ease;
+  background-color: #111516;
+  font-family: "PT Mono", monospace;
 }
 
 @font-face {
@@ -30,8 +29,29 @@ body {
   src: url("/fonts/MonumentExtended-Black.woff") format("woff");
 }
 
-header {
+nav {
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #e8f3ed;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+nav a {
+  padding-top: 6px 8px 6px 16px;
+  font-size: 25px;
   color: #111516;
+  display: block;
+}
+
+header,
+.altcontainer,
+footer {
+  margin-left: 250px;
 }
 
 header .hero {
@@ -43,36 +63,6 @@ footer {
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-nav {
-  overflow: hidden;
-  transition: color 0.5s ease;
-  background-color: #e8f3ed;
-  width: fit-content;
-  margin-top: 15px;
-  padding: 15px;
-  border-radius: 8px;
-  transition-duration: 0.5s;
-}
-
-nav a {
-  font-family: "PT Mono", monospace;
-  margin: 10px 10px 0 0;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: #111516;
-  float: left;
-  display: block;
-  color: #e8f3ed;
-  text-decoration: none;
-  transition-duration: 0.5s;
-}
-
-nav a:hover {
-  background-color: #f55d3e;
-  color: #111516;
-  transition-duration: 0.5s;
 }
 
 .sticky {
@@ -105,8 +95,7 @@ footer {
 header h1,
 footer h1 {
   font-size: 4em;
-  font-style: normal;
-  font-family: "Monument Extended Black";
+  font-family: "Monument Extended Regular";
 }
 
 header p,
@@ -129,9 +118,21 @@ section {
   padding: 15px;
 }
 
+.content {
+  font-family: "PT Mono", monospace;
+}
+
+.content h3 {
+  font-family: "Monument Extended Regular";
+}
+
 h2 {
   font-family: "Monument Extended Regular";
   font-size: 2em;
+}
+
+.bottom-text {
+  margin: 5px 0 0 5px;
 }
 
 .altcontainer section {
@@ -154,14 +155,6 @@ h2 {
   display: flex;
 }
 
-.bg-dark {
-  background-color: #111516;
-}
-
-.fg-light {
-  color: #e8f3ed;
-}
-
 @media only screen and (max-width: 600px) {
   body {
     overflow-y: auto;
@@ -169,10 +162,6 @@ h2 {
 
   .hero h1 {
     font-size: 10vw;
-  }
-
-  nav {
-    display: none;
   }
 
   .altcontainer section {
