@@ -14,7 +14,7 @@ body:
     id: adobe-app-name
     attributes:
       label: Adobe App
-      description: Which Adobe app do you intend to replace?
+      description: Which Adobe app do you intend to replace? (Include multiple if nessessary)
       placeholder: Photoshop, After Effects, etc.
     validations:
       required: true
@@ -23,7 +23,7 @@ body:
     id: alt-app-name
     attributes:
       label: Alternative App
-      description: Which app do you want to replace the Adobe app with?
+      description: Which app do you want to replace the Adobe app(s) with? (One only)
       placeholder: Krita, Blender, etc.
     validations:
       required: true
