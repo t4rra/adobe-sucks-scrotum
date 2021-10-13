@@ -9,10 +9,14 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: #e8f3ed;
-  background-color: #e8f3ed;
-  transition: background-color 0.5s ease;
+  background-color: #111516;
+  font-family: "PT Mono", monospace;
 }
 
 @font-face {
@@ -25,16 +29,61 @@ body {
   src: url("/fonts/MonumentExtended-Black.woff") format("woff");
 }
 
-header {
+nav {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #e8f3ed;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+nav a {
+  width: max-content;
+  padding: 8px;
+  margin-top: 8px;
+  font-size: 25px;
+  background-color: #111516;
+  color: #e8f3ed;
+  display: block;
+  transition-duration: 0.4s;
+}
+
+nav a:hover {
+  background-color: #e8f3ed;
   color: #111516;
+  transition-duration: 0.4s;
+}
+
+nav div {
+  position: absolute;
+  bottom: 50px;
+}
+
+header,
+.altcontainer,
+footer {
+  margin-left: 300px;
+}
+
+header .hero {
+  padding: 0 0 0 15px;
+}
+
+header,
+footer {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.bgtxt {
-  height: 0px;
-  overflow: hidden;
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .links a {
@@ -52,7 +101,7 @@ header {
 
 header,
 footer {
-  padding: 15px;
+  padding: 0 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +110,7 @@ footer {
 header h1,
 footer h1 {
   font-size: 4em;
-  font-family: "Monument Extended Black";
+  font-family: "Monument Extended Regular";
 }
 
 header p,
@@ -75,7 +124,8 @@ footer .links {
   text-align: center;
 }
 
-footer .links a {
+footer .links a,
+footer section p a {
   color: #e8f3ed;
 }
 
@@ -83,61 +133,44 @@ section {
   padding: 15px;
 }
 
-section a {
-  color: #e8f3ed;
+.content {
+  font-family: "PT Mono", monospace;
 }
 
-summary,
-footer h2,
-header h2 {
+.content h3 {
+  font-family: "Monument Extended Regular";
+  margin-top: 5px;
+}
+
+h2 {
   font-family: "Monument Extended Regular";
   font-size: 2em;
 }
 
-.altcontainer {
-  display: grid;
-  grid-template-columns: 50vw 50vw;
-}
-
-details {
-  margin: 25px;
-  max-width: 50vw;
-}
-
-summary {
-  background-color: #e8f3ed;
-  color: #111516;
-  padding: 15px;
-  border-radius: 8px;
-
-}
-
-details .content {
-  color: #e8f3ed;
-  padding: 15px;
-  font-family: "PT Mono", monospace;
-  font-size: 1.2em;
-}
-
-details .content h3 {
-  margin-top: 5px;
-}
-
-details .content a {
+a {
   color: #e8f3ed;
 }
 
-details .content .bottom-text {
-  margin: 10px 0 0 6px;
+.bottom-text {
+  margin: 5px 0 0 5px;
+  font-size: 1em;
 }
+
+.altcontainer section {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.altcontainer section .altapp a {
+  font-size: 1.5em;
+}
+
 .keyitem {
   display: flex;
 }
 
 .altapp {
   display: flex;
-}
-
-.bg-dark {
-  background-color: #111516;
 }
