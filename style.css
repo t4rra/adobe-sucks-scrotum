@@ -31,7 +31,7 @@ body {
 
 nav {
   height: 100vh;
-  width: 200px;
+  width: 250px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -42,16 +42,31 @@ nav {
 }
 
 nav a {
-  padding-top: 6px 8px 6px 16px;
+  width: max-content;
+  padding: 8px;
+  margin-top: 8px;
   font-size: 25px;
-  color: #111516;
+  background-color: #111516;
+  color: #e8f3ed;
   display: block;
+  transition-duration: 0.4s;
+}
+
+nav a:hover {
+  background-color: #e8f3ed;
+  color: #111516;
+  transition-duration: 0.4s;
+}
+
+nav div {
+  position: absolute;
+  bottom: 50px;
 }
 
 header,
 .altcontainer,
 footer {
-  margin-left: 250px;
+  margin-left: 300px;
 }
 
 header .hero {
@@ -124,6 +139,7 @@ section {
 
 .content h3 {
   font-family: "Monument Extended Regular";
+  margin-top: 5px;
 }
 
 h2 {
@@ -131,20 +147,24 @@ h2 {
   font-size: 2em;
 }
 
+a {
+  color: #e8f3ed;
+}
+
 .bottom-text {
   margin: 5px 0 0 5px;
+  font-size: 1em;
 }
 
 .altcontainer section {
   height: 100vh;
   display: flex;
-
   justify-content: space-evenly;
   align-items: center;
 }
 
-.altcontainer section a {
-  color: #e8f3ed;
+.altcontainer section .altapp a {
+  font-size: 1.5em;
 }
 
 .keyitem {
@@ -153,21 +173,4 @@ h2 {
 
 .altapp {
   display: flex;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    overflow-y: auto;
-  }
-
-  .hero h1 {
-    font-size: 10vw;
-  }
-
-  .altcontainer section {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 }
