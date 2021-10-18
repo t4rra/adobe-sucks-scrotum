@@ -11,34 +11,94 @@
 
 
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="navmenu.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
 </head>
 
 <body>
-	<nav class="animate__animated animate__slideInLeft">
-		<a href="#">Home</a>
-		<a href="#ps">Photoshop</a>
-		<a href="#lr">Lightroom</a>
-		<a href="#ai">Illustrator</a>
-		<a href="#xd">XD</a>
-		<a href="#an">Animate</a>
-		<a href="#pr">Premiere</a>
-		<a href="#ae">After Effects</a>
-		<a href="#dw">Dreamweaver</a>
-		<a href="#footer">Don't Pirate</a>
-		<div class="promo">
-			<a href="https://esoda.ga" target="_blank">Made by esoda</a>
-			<a href="https://github.com/E-Soda/adobe-sucks-scrotum" target="_blank">Github Repo</a>
+	<nav>
+		<div class="menu-open">
+			<h2>menu</h2>
+		</div>
+		<div class="nav-container is-active">
+			<div class="menu-close">
+				<h2>close</h2>
+			</div>
+			<div class="socials">
+				<h3><a href="https://esoda.ga/" target="_blank">Made by esoda</a></h3>
+				<h3><a href="https://github.com/E-Soda/adobe-sucks-scrotum" target="_blank">Github Repo</a></h3>
+			</div>
+			<div class="menu">
+				<div class="menu__item">
+					<a href="#" class="menu__item-link">
+						Home
+					</a>
+				</div>
+				<div class="menu__item">
+					<a href="#ps" class="menu__item-link">
+						Photoshop
+					</a>
+				</div>
+				<div class="menu__item">
+					<a href="#lr" class="menu__item-link">
+						Lightroom
+					</a>
+				</div>
+				<div class="menu__item">
+					<a href="#ai" class="menu__item-link">
+						Illustrator
+					</a>
+				</div>
+				<div class="menu__item">
+					<a href="#xd" class="menu__item-link">
+						XD
+					</a>
+				</div>
+
+				<div class="menu__item">
+					<a href="#an" class="menu__item-link">
+						Animate
+					</a>
+				</div>
+
+				<div class="menu__item">
+					<a href="#pr" class="menu__item-link">
+						Premiere
+					</a>
+				</div>
+				<div class="menu__item">
+					<a href="#ae" class="menu__item-link">
+						After Effects
+					</a>
+				</div>
+				<div class="menu__item">
+					<a href="#dw" class="menu__item-link">
+						Dreamweaver
+					</a>
+				</div>
+				<div class="menu__item">
+					<a href="#footer" class="menu__item-link">
+						Don't Pirate
+					</a>
+				</div>
+
+
+			</div>
 		</div>
 	</nav>
 	<header>
 		<section class="hero">
 			<h1 class="animate__animated animate__fadeInDown">ADOBE SUCKS (SCROTUM).</h1>
-			<p class="animate__animated animate__fadeIn">Yeah, really. Their overpriced and unreliable software has gone unchecked for far too long.
+			<p class="animate__animated animate__fadeIn">Yeah, really. Their overpriced and unreliable software has gone
+				unchecked for far too long.
 				We're here to offer better alternatives.</p>
 		</section>
 		<section>
@@ -125,13 +185,6 @@
 					<span class="material-icons">
 						money_off
 					</span>
-					<p> <a href="https://www.sketchbook.com/" target="_blank">Autodesk Sketchbook</a> </p>
-				</div>
-
-				<div class="altapp">
-					<span class="material-icons">
-						money_off
-					</span>
 					<p> <a href="https://firealpaca.com/" target="_blank">FireAlpaca</a> </p>
 				</div>
 
@@ -140,6 +193,13 @@
 						money_off
 					</span>
 					<p> <a href="https://medibangpaint.com/en/" target="_blank">MediBang Paint</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
+						attach_money
+					</span>
+					<p> <a href="https://www.sketchbook.com/" target="_blank">Autodesk Sketchbook</a> </p>
 				</div>
 
 				<div class="altapp">
@@ -203,6 +263,14 @@
 					</span>
 
 					<p> <a href="https://affinity.serif.com/en-us/photo/" target="_blank">Affinity Photo</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
+						attach_money
+					</span>
+
+					<p> <a href="https://www.captureone.com/" target="_blank">Capture One</a> </p>
 				</div>
 
 				<div class="altapp">
@@ -300,6 +368,27 @@
 			<div class="content">
 				<div class="altapp">
 					<span class="material-icons">
+						code
+					</span>
+					<p> <a href="https://penpot.app/" target="_blank">Penpot</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
+						code
+					</span>
+					<p> <a href="https://github.com/akiraux/Akira" target="_blank">Akira</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
+						code
+					</span>
+					<p> <a href="https://github.com/nitramr/Draftoola" target="_blank">Draftoola</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
 						money_off
 					</span>
 					<p> <a href="https://figma.com/" target="_blank">Figma</a> </p>
@@ -311,13 +400,6 @@
 					</span>
 
 					<p> <a href="https://www.invisionapp.com/studio" target="_blank">InVision Studio</a> </p>
-				</div>
-
-				<div class="altapp">
-					<span class="material-icons">
-						code
-					</span>
-					<p> <a href="https://github.com/nitramr/Draftoola" target="_blank">Draftoola</a> </p>
 				</div>
 
 				<div class="altapp">
@@ -382,6 +464,13 @@
 
 				<div class="altapp">
 					<span class="material-icons">
+						code
+					</span>
+					<p> <a href="https://www.wickeditor.com/" target="_blank">Wick Editor</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
 						money_off
 					</span>
 					<p> <a href="https://firealpaca.com/" target="_blank">FireAlpaca</a> </p>
@@ -404,6 +493,13 @@
 
 				<div class="altapp">
 					<span class="material-icons">
+						attach_money
+					</span>
+					<p> <a href="https://tumult.com/hype/" target="_blank">Tumult Hype</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
 						money_off
 					</span>
 					<span class="material-icons">
@@ -422,16 +518,12 @@
 		<section id="pr">
 			<h2>Premiere</h2>
 			<div class="content">
+
 				<div class="altapp">
 					<span class="material-icons">
-						money_off
+						code
 					</span>
-					<span class="material-icons">
-						attach_money
-					</span>
-					<p> <a href="https://www.blackmagicdesign.com/products/davinciresolve/" target="_blank">Davinci
-							Resolve</a>
-					</p>
+					<p> <a href="https://shotcut.org/" target="_blank">Shotcut</a> </p>
 				</div>
 
 				<div class="altapp">
@@ -447,6 +539,29 @@
 					</span>
 
 					<p> <a href="https://kdenlive.org/en/" target="_blank">Kdenlive</a> </p>
+				</div>
+				
+				<div class="altapp">
+					<span class="material-icons">
+						money_off
+					</span>
+					<span class="material-icons">
+						attach_money
+					</span>
+					<p> <a href="https://www.blackmagicdesign.com/products/davinciresolve/" target="_blank">Davinci
+							Resolve</a>
+					</p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
+						money_off
+					</span>
+					<span class="material-icons">
+						attach_money
+					</span>
+					<p> <a href="https://lwks.com/" target="_blank">Lightworks</a>
+					</p>
 				</div>
 
 				<div class="altapp">
@@ -610,6 +725,14 @@
 		<section id="dw">
 			<h2>Dreamweaver</h2>
 			<div class="content">
+				<h3>Source Code Editor</h3>
+				<div class="altapp">
+					<span class="material-icons">
+						code
+					</span>
+					<p> <a href="https://vscodium.com/" target="_blank">VSCodium</a> </p>
+				</div>
+
 				<div class="altapp">
 					<span class="material-icons">
 						money_off
@@ -649,6 +772,23 @@
 					</span>
 					<p> <a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a> </p>
 				</div>
+
+				<h3>WYSIWYG Editors (Minimal/No Code)</h3>
+
+				<div class="altapp">
+					<span class="material-icons">
+						code
+					</span>
+					<p> <a href="https://www.silex.me/" target="_blank">Silex</a> </p>
+				</div>
+
+				<div class="altapp">
+					<span class="material-icons">
+						attach_money
+					</span>
+					<p> <a href="https://sparkleapp.com/" target="_blank">Sparkle</a> </p>
+				</div>
+
 				<p class="bottom-text">Got an alternative for Dreamweaver that you don't see? Submit an issue <a
 						href="https://github.com/E-Soda/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative%3A+Dreamweaver+-+[Alternative]"
 						target="_blank">here.</a>
@@ -662,7 +802,8 @@
 			<h2>PLEASE DON'T PIRATE.</h2>
 			<p>Why? Adobe still benefits from piracy by increasing their market dominance. <br>
 			<p>Don't care? You shouldn't pirate anyways. Avoid <a href="https://reddit.com/r/genp"
-					target="_blank">/r/genp (Windows)</a> and <a href="https://reddit.com/r/adobezii" target="_blank">/r/adobezii
+					target="_blank">/r/genp (Windows)</a> and <a href="https://reddit.com/r/adobezii"
+					target="_blank">/r/adobezii
 					(Mac)</a> at all costs as they discuss the
 				infringement of Adobe's
 				intellectual property.</p>
@@ -676,6 +817,7 @@
 					Repository</a> </p>
 		</section>
 	</footer>
+	<script src="/navmenu.js"></script>
 </body>
 
 </html>

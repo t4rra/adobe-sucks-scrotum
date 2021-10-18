@@ -1,3 +1,9 @@
+:root {
+  --bg: #111516;
+  --fg: #e8f3ed;
+  --hl: #f55d3e;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,13 +15,9 @@ body {
   height: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  color: #e8f3ed;
-  background-color: #111516;
+  color: var(--fg);
+  background-color: var(--bg);
   font-family: "PT Mono", monospace;
 }
 
@@ -29,65 +31,12 @@ body {
   src: url("/fonts/MonumentExtended-Black.woff") format("woff");
 }
 
-nav {
-  height: 100vh;
-  width: 250px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #e8f3ed;
-  overflow-x: hidden;
-  padding: 20px;
-}
-
-nav a {
-  width: max-content;
-  padding: 8px;
-  margin-top: 8px;
-  font-size: 25px;
-  background-color: #111516;
-  color: #e8f3ed;
-  display: block;
-  transition-duration: 0.4s;
-}
-
-nav a:hover {
-  background-color: #e8f3ed;
-  color: #111516;
-  transition-duration: 0.4s;
-}
-
-nav div {
-  position: absolute;
-  bottom: 50px;
-}
-
-header,
-.altcontainer,
-footer {
-  margin-left: 300px;
-}
-
-header .hero {
-  padding: 0 0 0 15px;
-}
 
 header,
 footer {
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.links a {
-  color: #111516;
 }
 
 .header-bottom {
@@ -124,11 +73,6 @@ footer .links {
   text-align: center;
 }
 
-footer .links a,
-footer section p a {
-  color: #e8f3ed;
-}
-
 section {
   padding: 15px;
 }
@@ -148,7 +92,7 @@ h2 {
 }
 
 a {
-  color: #e8f3ed;
+  color: var(--hl);
 }
 
 .bottom-text {
@@ -174,3 +118,14 @@ a {
 .altapp {
   display: flex;
 }
+
+
+@media only screen and (max-width: 600px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+  
+  .altcontainer section {
+    flex-direction: column;
+  }
+} 

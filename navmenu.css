@@ -1,0 +1,119 @@
+nav a,
+nav h2,
+.marquee__inner {
+  font-family: "Monument Extended Regular";
+  color: var(--bg);
+}
+
+nav a {
+  color: var(--hl);
+}
+
+.menu-open h2 {
+  color: var(--fg);
+  padding: 40px;
+  top: 0;
+  right: 0;
+  position: fixed;
+}
+
+.menu-open,
+.menu-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.socials {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5vh 6vw;
+}
+
+.socials h3 a {
+  text-transform: uppercase;
+}
+
+.nav-container {
+  position: fixed;
+  z-index: 2;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--fg);
+}
+
+.menu__item {
+  position: relative;
+  padding: 0.75vh 6vw;
+}
+
+.menu__item-link {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  transition: opacity 0.4s;
+  color: var(--bg);
+  text-decoration: none;
+  transition-duration: 0.75s;
+}
+
+.menu__item-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 10px;
+  background-color: var(--hl);
+  position: absolute;
+  bottom: 40%;
+  z-index: -1;
+  transition-duration: 0.75s;
+}
+
+.menu__item-link:hover::after {
+  width: 100%;
+}
+
+.menu {
+  padding: 10vh 0 25vh;
+  font-size: 5vh;
+}
+
+section .wrapper {
+  overflow: hidden;
+}
+
+section .wrapper h1 {
+  animation: slide-up 1s;
+}
+
+section .wrapper p {
+  animation: slide-up 1s;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(200px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+	.menu {
+		font-size: 8vw;
+	}
+
+	.menu-open,
+	.menu-close {
+	  padding: 40px;
+	  font-size: 10px;
+	}
+  } 
