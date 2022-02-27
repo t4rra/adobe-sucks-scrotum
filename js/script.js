@@ -1,70 +1,55 @@
-// thanks https://www.w3schools.com/howto/howto_js_filter_elements.asp
-filterSelection("all")
-function filterSelection(c) {
-	var x, i;
-	x = document.getElementsByClassName("filterEl");
-	if (c == "all") c = "";
-	for (i = 0; i < x.length; i++) {
-	  RemoveClass(x[i], "show");
-	  if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
-	}
-  }
+// thanks https://photics.com/hero-1-help-my-map-does-not-work/
 
-function AddClass(element, name) {
-	var i, arr1, arr2;
-	arr1 = element.className.split(" ");
-	arr2 = name.split(" ");
-	for (i = 0; i < arr2.length; i++) {
-	  if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-	}
+function showElements(elements) {
+  for (var s = 0; s < elements.length; s++) {
+    elements[s].setAttribute("data-visible", "visible");
   }
-  
-  function RemoveClass(element, name) {
-	var i, arr1, arr2;
-	arr1 = element.className.split(" ");
-	arr2 = name.split(" ");
-	for (i = 0; i < arr2.length; i++) {
-	  while (arr1.indexOf(arr2[i]) > -1) {
-		arr1.splice(arr1.indexOf(arr2[i]), 1);     
-	  }
-	}
-	element.className = arr1.join(" ");
+}
+function hideElements(elements) {
+  for (var h = 0; h < elements.length; h++) {
+    elements[h].setAttribute("data-visible", "invisible");
   }
-  
-  // Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("filterBTN");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
+}
+
+function selectAll(elements) {
+  for (var z = 0; z < elements.length; z++) {
+    return elements[z];
+  }
 }
 
 function update() {
-	var maps = document.querySelectorAll(".🗺"); // Don't forget the dot, very important 😊
+  var selectedapp = document.querySelector(
+    "input[name='mainFilter']:checked"
+  ).id;
+  var selectedappClass = document.querySelector(
+    "input[name='mainFilter']:checked"
+  ).value;
 
-	// for (var i = 0; i < maps.length; i++) {
-	//      maps[i].style.opacity = 0;
-	// }
+  var selectedfilter = document.querySelector(
+    "input[name='secondaryfilter']:checked"
+  ).id;
+  var selectedfilterClass = document.querySelector(
+    "input[name='secondaryfilter']:checked"
+  ).value;
 
-	maps.forEach((e) => { e.style.opacity = 0; });
+  console.log("selected filter ", selectedfilter);
+  console.log("selected filter class", selectedfilterClass);
+  console.log("selected app ", selectedapp);
+  console.log("selected app class", selectedappClass);
 
-	var selectedMap = document.querySelector("input[name='🌎']:checked").value;
-	document.getElementById(selectedMap).style.opacity = 1;
+  hideElements(document.getElementsByClassName("filterEl"));
 
-	document.getElementById("Flags").setAttribute("data-visible", "nope");
-	document.getElementById("Flags-Oceans").setAttribute("data-visible", "nope");
-
-	if (document.getElementById("button-free").checked) {
-		if (selectedMap == "Oceans") {
-			document.getElementById("Flags-Oceans").setAttribute("data-visible", "yup");
-		} else {
-			document.getElementById("Flags").setAttribute("data-visible", "yup");
-		}
-	}
-
+  if (document.getElementById(selectedapp).checked) {
+    if (document.getElementById(selectedfilter).checked) {
+      showElements(
+        document.querySelectorAll(
+          "." + selectedappClass + "." + selectedfilterClass
+        )
+      );
+    }
+  } else {
+    hideElements(document.getElementsByClassName(selectedappClass));
+  }
 }
 
 document.addEventListener("input", update);

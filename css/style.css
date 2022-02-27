@@ -1,4 +1,4 @@
-[data-visible="nope"] {
+[data-visible="invisible"] {
 	opacity: 0;
 }
 
@@ -89,7 +89,6 @@ main {
   background-color: var(--mg);
   padding: 25px;
   float: left;
-  display: none;
 }
 
 .show {

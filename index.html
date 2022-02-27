@@ -14,29 +14,52 @@
 	<header>
 		<h1>adobe sucks scrotum</h1>
 		<p>Yeah, really. Their overpriced and unreliable software has gone unchecked for far too long. We're here to offer better alternatives.</p>
-		<form id="filterForm">
+		<form id="world-type">
 			<div>
-				<input type="checkbox" id="button-free" name="free" value="free">
-				<label for="button-free">Free</label>
+				<input type="radio" id="button-all" name="mainFilter" value="All" checked="true">
+				<label for="button-all">All</label>
+			</div>
+
+			<div>
+				<input type="radio" id="button-photoshop" name="mainFilter" value="photoshop">
+				<label for="button-photoshop">photoshop</label>
+			</div>
+
+			<div>
+				<input type="radio" id="button-lightroom" name="mainFilter" value="lightroom">
+				<label for="button-lightroom">lightroom</label>
+			</div>
+
+			<div>
+				<input type="radio" id="button-illustrator" name="mainFilter" value="illustrator">
+				<label for="button-illustrator">illustrator</label>
+			</div>
+
+			<div>
+				<input type="radio" id="button-flags" name="mainFilter" value="Flags">
+				<label for="button-flags">Flags</label>
+			</div>
+
+			<div>
+				<input type="radio" id="filter-all" name="secondaryfilter" value="filterEl" checked="true">
+				<label for="filter-all">filter all</label>
+			</div>
+
+			<div>
+				<input type="radio" id="filter-foss" name="secondaryfilter" value="foss">
+				<label for="filter-open-source">filter open source</label>
+			</div>
+
+			<div>
+				<input type="radio" id="filter-free" name="secondaryfilter" value="free">
+				<label for="filter-filter22">filter free</label>
+			</div>
+			
+			<div>
+				<input type="radio" id="filter-paid" name="secondaryfilter" value="paid">
+				<label for="filter-filter22">filter paid</label>
 			</div>
 		</form>
-		<div id="filterBTN">
-			<div id="appFilter">
-				<button class="btn active" onclick="filterSelection('all')"> Show all</button>
-				<button class="btn" onclick="filterSelection('photoshop')"> photoshop</button>
-				<button class="btn" onclick="filterSelection('lightroom')"> lightroom</button>
-				<button class="btn" onclick="filterSelection('illustrator')"> illustrator</button>
-				<button class="btn" onclick="filterSelection('xd')"> xd</button>
-				<button class="btn" onclick="filterSelection('animate')"> animate</button>
-				<button class="btn" onclick="filterSelection('premiere')"> premiere</button>
-				<button class="btn" onclick="filterSelection('after effects')"> after effects</button>
-				<button class="btn" onclick="filterSelection('dreamweaver')"> animate</button>
-
-				<button class="btn" onclick="filterSelection('open-source')"> Open Source</button>
-				<button class="btn" onclick="filterSelection('free')"> free</button>
-				<button class="btn" onclick="filterSelection('paid')"> paid (one-time payment)</button>
-			</div>
-		</div>
 	</header>
 
 	<main class="container">
@@ -48,7 +71,7 @@
 			<h1>lightroom paid</h1>
 			<p>this is a little description</p>
 		</div>
-		<div class="filterEl photoshop open-source">
+		<div class="filterEl photoshop foss">
 			<h1>photoshop open source</h1>
 			<p>this is a little description</p>
 		</div>
