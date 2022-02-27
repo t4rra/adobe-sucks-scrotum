@@ -12,9 +12,10 @@ function hideElements(elements) {
 }
 
 // function to log all elements
-function logAll(elements) {
-	for (var i = 0; i < elements.length; i++) {
-		console.log(elements[i]);
+function logAll(beans) {
+	for (var i = 0; i < beans.length; i++) {
+		beans[i].setAttribute("data-visible", "yep");
+		console.log(beans[i]);
 	}
 }
 
