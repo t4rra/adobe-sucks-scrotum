@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Layered Maps Example</title>
+
+	<style>
+		body {
+			margin: 0;
+			overflow: hidden;
+			font-family: sans-serif;
+		}
+
+		.🗺,
+		.🇺🇸 {
+			position: absolute;
+			width: 100%;
+			height: auto;
+			transition: opacity ease-in-out 1s;
+		}
+
+		[data-visible="nope"] {
+			opacity: 0;
+		}
+
+		#world-type {
+			position: absolute;
+			padding: 15px;
+			background-color: rgba(128, 128, 128, 0.125);
+			border-bottom-left-radius: 30px;
+			right: 0;
+			z-index: 1;
+		}
+
+		#world-type>div {
+			display: flex;
+			align-items: center;
+		}
+
+		input[type=radio],
+		input[type=checkbox] {
+			width: 3em;
+			height: 3em;
+		}
+	</style>
+
+	<script>
+
+		function update() {
+			var maps = document.querySelectorAll(".🗺"); // Don't forget the dot, very important 😊
+
+			// for (var i = 0; i < maps.length; i++) {
+			//      maps[i].style.opacity = 0;
+			// }
+
+			maps.forEach((e) => { e.style.opacity = 0; });
+
+			var selectedMap = document.querySelector("input[name='🌎']:checked").value;
+			document.getElementById(selectedMap).style.opacity = 1;
+
+			document.getElementById("Flags").setAttribute("data-visible", "nope");
+			document.getElementById("Flags-Oceans").setAttribute("data-visible", "nope");
+
+			if (document.getElementById("button-flags").checked) {
+				if (selectedMap == "Oceans") {
+					document.getElementById("Flags-Oceans").setAttribute("data-visible", "yup");
+				} else {
+					document.getElementById("Flags").setAttribute("data-visible", "yup");
+				}
+			}
+
+		}
+
+		document.addEventListener("input", update);
+	</script>
+
+</head>
+
+<form id="world-type">
+	<div>
+		<input type="radio" id="button-physical" name="🌎" value="Physical" checked>
+		<label for="button-physical">Physical</label>
+	</div>
+
+	<div>
+		<input type="radio" id="button-political" name="🌎" value="Political">
+		<label for="button-political">Political</label>
+	</div>
+
+	<div>
+		<input type="radio" id="button-oceans" name="🌎" value="Oceans">
+		<label for="button-oceans">Oceans</label>
+	</div>
+
+	<div>
+		<input type="checkbox" id="button-flags" name="🇺🇸" value="flags">
+		<label for="button-flags">Flags</label>
+	</div>
+</form>
+
+<h1 alt="Political World Map" id="Political" class="🗺" src="world-political.png">pol world map</h1>
+<h1 alt="Oceans World Map" id="Oceans" class="🗺" src="world-oceans.png">ocean world map</h1>
+<h1 alt="Physical World Map" id="Physical" class="🗺" src="world-physical.png">phy world map</h1>
+<h1 alt="World Map Flags" id="Flags" class="🇺🇸" src="flags.png" data-visible="nope">world map flag</h1>
+<h1 alt="World Map Flags Oceans" id="Flags-Oceans" class="🇺🇸" src="flags-oceans.png" data-visible="nope">ocean map
+	flag</h1>
+
+</body>
+
+</html>

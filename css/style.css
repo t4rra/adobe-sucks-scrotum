@@ -1,0 +1,115 @@
+[data-visible="nope"] {
+	opacity: 0;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #111516;
+  --mg: #2a2e33;
+  --fg: #e8f3ed;
+  --hl: #f55d3e;
+
+  --const-fg: #e8f3ed;
+
+  --font-header: "Monument Extended";
+  --font-body: "Lora";
+}
+
+@font-face {
+  font-family: "Monument Extended";
+  src: url(/fonts/MonumentExtended-Regular.woff);
+}
+
+::selection {
+  background-color: var(--hl);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  text-transform: uppercase;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+header h1 {
+	font-size: 3em;
+}
+
+/* layout */
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  min-height: 100vw;
+}
+
+header {
+  width: 30vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  margin: 25px;
+}
+
+main {
+  width: 65vw;
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding: 25px;
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+}
+
+.filterEl {
+	border-radius: 8px;
+  background-color: var(--mg);
+  padding: 25px;
+  float: left;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
