@@ -36,6 +36,7 @@ function update() {
   console.log("selected filter class", selectedfilterClass);
   console.log("selected app ", selectedapp);
   console.log("selected app class", selectedappClass);
+  console.log("----------------------------------");
 
   hideElements(document.getElementsByClassName("filterEl"));
 
