@@ -1,3 +1,5 @@
+// thanks https://photics.com/hero-1-help-my-map-does-not-work/
+
 function showElements(elements) {
 	for (var s = 0; s < elements.length; s++) {
 		elements[s].setAttribute("data-visible", "yep");
@@ -9,6 +11,7 @@ function hideElements(elements) {
 	}
 }
 
+// function to log all elements
 function logAll(elements) {
 	for (var i = 0; i < elements.length; i++) {
 		console.log(elements[i]);
@@ -19,7 +22,8 @@ function update() {
 	var selectedMap = document.querySelector("input[name='mainFilter']:checked").value;
 	var secondSelectedMap = document.querySelectorAll("input[name='secondaryFilter']:checked").value;
 	console.log(selectedMap);
-	logAll(secondSelectedMap);
+	// console.log(secondSelectedMap);
+	logAll(document.querySelectorAll("input[name='secondaryFilter']:checked").value);
 
 	hideElements(document.getElementsByClassName("Physical"));
 	hideElements(document.getElementsByClassName("Political"));
