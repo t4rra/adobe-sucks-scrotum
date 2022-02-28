@@ -1,10 +1,9 @@
-// thanks https://photics.com/hero-1-help-my-map-does-not-work/
-
 function showElements(elements) {
   for (var s = 0; s < elements.length; s++) {
     elements[s].setAttribute("data-visible", "visible");
   }
 }
+
 function hideElements(elements) {
   for (var h = 0; h < elements.length; h++) {
     elements[h].setAttribute("data-visible", "invisible");
@@ -17,6 +16,7 @@ function selectAll(elements) {
   }
 }
 
+// thanks https://photics.com/hero-1-help-my-map-does-not-work/
 function update() {
   var selectedapp = document.querySelector(
     "input[name='mainFilter']:checked"
@@ -32,14 +32,9 @@ function update() {
     "input[name='secondaryfilter']:checked"
   ).value;
 
-  console.log("selected filter ", selectedfilter);
-  console.log("selected filter class", selectedfilterClass);
-  console.log("selected app ", selectedapp);
-  console.log("selected app class", selectedappClass);
-  console.log("----------------------------------");
-
   hideElements(document.getElementsByClassName("filterEl"));
 
+  // shows elements filtered by app and price
   if (document.getElementById(selectedapp).checked) {
     if (document.getElementById(selectedfilter).checked) {
       showElements(
@@ -51,6 +46,16 @@ function update() {
   } else {
     hideElements(document.getElementsByClassName(selectedappClass));
   }
+
+  // checks if any element's data-visible attribute is visible
+  if (document.querySelectorAll("[data-visible='visible']").length > 0) {
+    console.log("there is a result");
+    document.getElementById("noResult").classList.add("hidden");
+  } else {
+    console.log("there is no results");
+    document.getElementById("noResult").classList.remove("hidden");
+  }
 }
 
+// runs the function every time an input is detected
 document.addEventListener("input", update);

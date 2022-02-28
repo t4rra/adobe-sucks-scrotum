@@ -1,3 +1,8 @@
+<!-- TODO: -->
+<!-- 1. make filter menu work with mobile -->
+<!-- 2. Add content -->
+<!-- 3. idk just polish stuff up -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,54 +18,54 @@
 <body>
 	<header>
 		<h1>adobe sucks scrotum</h1>
-		<p>Yeah, really. Their overpriced and unreliable software has gone unchecked for far too long. We're here to offer better alternatives.</p>
-		<form id="world-type">
-			<div>
-				<input type="radio" id="button-all" name="mainFilter" value="filterEl" checked="true">
-				<label for="button-all">All</label>
-			</div>
+		<h6>made by <a href="#" target="_blank">Easun</a></h6>
+		<p>Yeah, really. Their overpriced and unreliable software has gone unchecked for far too long. We're here to
+			offer better alternatives.</p>
+		<p>Select an Adobe app you'd like to replace. All paid options only need a one-time payment.</p>
+		<p>Got an alternate app that isn't listed? <a href="#" target="_blank">Submit it here!</a> </p>
+		<section id="filterContainer">
+			<form autocomplete="off" id="app-filter">
+				<label for="button-all"><input type="radio" id="button-all" name="mainFilter" value="filterEl"
+						checked="true"><span>All Apps</span></label>
 
-			<div>
-				<input type="radio" id="button-photoshop" name="mainFilter" value="photoshop">
-				<label for="button-photoshop">photoshop</label>
-			</div>
+				<label for="button-photoshop"><input type="radio" id="button-photoshop" name="mainFilter"
+						value="photoshop"><span>Photoshop</span></label>
 
-			<div>
-				<input type="radio" id="button-lightroom" name="mainFilter" value="lightroom">
-				<label for="button-lightroom">lightroom</label>
-			</div>
+				<label for="button-lightroom"><input type="radio" id="button-lightroom" name="mainFilter"
+						value="lightroom"><span>Lightroom</span></label>
 
-			<div>
-				<input type="radio" id="button-illustrator" name="mainFilter" value="illustrator">
-				<label for="button-illustrator">illustrator</label>
-			</div>
+				<label for="button-xd"><input type="radio" id="button-xd" name="mainFilter"
+						value="xd"><span>XD</span></label>
 
-			<div>
-				<input type="radio" id="button-flags" name="mainFilter" value="Flags">
-				<label for="button-flags">Flags</label>
-			</div>
+				<label for="button-premiere"><input type="radio" id="button-premiere" name="mainFilter"
+						value="premiere"><span>Premiere</span></label>
 
-			<div>
-				<input type="radio" id="filter-all" name="secondaryfilter" value="filterEl" checked="true">
-				<label for="filter-all">filter all</label>
-			</div>
+				<label for="button-afterfx"><input type="radio" id="button-afterfx" name="mainFilter"
+						value="afterfx"><span>After Effects</span></label>
 
-			<div>
-				<input type="radio" id="filter-foss" name="secondaryfilter" value="foss">
-				<label for="filter-open-source">filter open source</label>
-			</div>
+				<label for="button-dreamweaver"><input type="radio" id="button-dreamweaver" name="mainFilter"
+						value="dreamweaver"><span>Dreamweaver</span></label>
+			</form>
+			<form autocomplete="off" id="price-filter">
+				<label for="filter-all"><input type="radio" id="filter-all" name="secondaryfilter" value="filterEl"
+						checked="true"><span>All Pricing</span></label>
 
-			<div>
-				<input type="radio" id="filter-free" name="secondaryfilter" value="free">
-				<label for="filter-filter22">filter free</label>
-			</div>
-			
-			<div>
-				<input type="radio" id="filter-paid" name="secondaryfilter" value="paid">
-				<label for="filter-filter22">filter paid</label>
-			</div>
-		</form>
+				<label for="filter-foss"><input type="radio" id="filter-foss" name="secondaryfilter"
+						value="foss"><span>Open Source</span></label>
+
+				<label for="filter-free"><input type="radio" id="filter-free" name="secondaryfilter"
+						value="free"><span>Free</span></label>
+
+				<label for="filter-paid"><input type="radio" id="filter-paid" name="secondaryfilter"
+						value="paid"><span>Paid</span></label>
+			</form>
+		</section>
 	</header>
+
+	<div id="noResult" class="hidden">
+		<h2>No results found!</h2>
+		<p>Try a different filter?</p>
+	</div>
 
 	<main class="container">
 		<div class="filterEl photoshop free">
@@ -79,11 +84,20 @@
 			<h1>photoshop free</h1>
 			<p>this is a little description</p>
 		</div>
-		<div class="filterEl photoshop paid">
-			<h1>photoshop paid</h1>
+		<div class="filterEl afterfx paid">
+			<h1>after effects paid</h1>
 		</div>
-		<div class="filterEl illustrator free">
-			<h1>illustrator free</h1>
+		<div class="filterEl premiere paid">
+			<h1>premiere paid</h1>
+		</div>
+		<div class="filterEl lightroom foss">
+			<h1>lightroom foss</h1>
+		</div>
+		<div class="filterEl xd free">
+			<h1>xd foss</h1>
+		</div>
+		<div class="filterEl xd foss">
+			<h1>xd foss</h1>
 		</div>
 	</main>
 
