@@ -134,10 +134,8 @@ main, #noResult{
 }
 
 main {
-  display: grid;
-  grid-gap: 25px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, auto);
+display: flex;
+  flex-direction: column;
 }
 
 #noResult {
