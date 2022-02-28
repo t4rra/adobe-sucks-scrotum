@@ -163,6 +163,9 @@ display: flex;
   float: left;
   transition-duration: 0.4s;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  
 }
 
 .filterEl .links {
