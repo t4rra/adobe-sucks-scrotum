@@ -153,12 +153,12 @@ main {
 
 #filterContainer {
   margin-top: 25px;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(2, auto);
+  display: flex;
+  flex-direction: column;
 }
 
 .filterEl {
+  width: 100%;
   border-radius: 10px;
   background-color: var(--mg);
   padding: 25px;
