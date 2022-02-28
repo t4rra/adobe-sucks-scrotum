@@ -87,6 +87,10 @@ a:hover::after {
   transform: scaleX(0);
 }
 
+.filterEl h1 {
+  font-size: 0.5em;
+}
+
 .filterEl a {
   text-transform: uppercase;
   font-family: var(--font-header);
@@ -165,7 +169,6 @@ display: flex;
   position: relative;
   display: flex;
   flex-direction: row;
-  
 }
 
 .filterEl .links {
