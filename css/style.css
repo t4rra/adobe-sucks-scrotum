@@ -14,8 +14,8 @@
   --fg: #e8f3ed;
   --hl: #f55d3e;
 
-  --font-header: "Monument Extended";
-  --font-body: "Lora";
+  --font-header: "Monument Extended", sans-serif;
+  --font-body: "Lora", serif;
 }
 
 @font-face {
@@ -76,7 +76,6 @@ a::after {
   height: 3px;
   bottom: 0;
   left: 0;
-  z-index: -1;
   border-radius: 8px;
   transform: scaleX(1);
   transition: transform 0.4s ease-in-out;
@@ -86,6 +85,22 @@ a::after {
 a:hover::after {
   transform-origin: bottom right;
   transform: scaleX(0);
+}
+
+.filterEl a {
+  text-transform: uppercase;
+  font-family: var(--font-header);
+  margin-bottom: 5px;
+  font-size: 1.25em;
+}
+.filterEl h5 {
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+.filterEl h6 {
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
 
 #noResult h2 {
@@ -101,7 +116,7 @@ body {
 }
 
 header {
-  width: 30vw;
+  width: 32vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -111,7 +126,7 @@ header {
 }
 
 main, #noResult{
-  width: 65vw;
+  width: 63vw;
   top: 0;
   right: 0;
   position: absolute;
@@ -121,7 +136,7 @@ main, #noResult{
 main {
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(3, auto);
 }
 
@@ -133,6 +148,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  pointer-events: none;
 }
 
 #filterContainer {
@@ -143,11 +159,19 @@ main {
 }
 
 .filterEl {
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: var(--mg);
   padding: 25px;
   float: left;
   transition-duration: 0.4s;
+  position: relative;
+}
+
+.filterEl .links {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* form styling */
@@ -216,4 +240,12 @@ label:hover {
 /* utility */
 .hidden {
   opacity: 0;
+}
+
+.noClickParent {
+  cursor: not-allowed;
+}
+
+.noClick {
+  pointer-events: none;
 }
