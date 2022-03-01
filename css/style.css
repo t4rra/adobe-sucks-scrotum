@@ -95,6 +95,7 @@ a:hover::after {
   transition-duration: 0.4s;
   background-color: var(--bg);
   color: var(--fg);
+  cursor: pointer;
 }
 
 .btn:hover, button:hover {
