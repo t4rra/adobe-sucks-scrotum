@@ -93,6 +93,7 @@ a:hover::after {
   padding: 10px 20px;
   border: 2px solid var(--fg);
   transition-duration: 0.4s;
+  background: none;
 }
 
 .btn:hover, button:hover {
