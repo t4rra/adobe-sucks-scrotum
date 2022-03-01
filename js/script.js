@@ -59,3 +59,29 @@ function update() {
 
 // runs the function every time an input is detected
 document.addEventListener("input", update);
+
+// About popup
+var modal = document.getElementById("about");
+
+var btn = document.getElementById("openAbout");
+
+var closebtn = document.getElementById("closeAbout");
+
+btn.onclick = function () {
+  modal.style.opacity = "1";
+  modal.style.pointerEvents = "all";
+  document.querySelector("body").style.overflow = "hidden";
+};
+
+closebtn.onclick = function () {
+  modal.style.opacity = "0";
+  modal.style.pointerEvents = "none";
+  document.querySelector("body").style.overflow = "auto";
+};
+
+// window.onclick = function (event) {
+//   if (event.target == modal) {
+//     modal.style.opacity = "0";
+//     modal.style.pointerEvents = "none";
+//   }
+// };

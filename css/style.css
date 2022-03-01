@@ -54,6 +54,7 @@ header h1 {
 
 header h6 {
   font-size: 0.75em;
+  margin-bottom: 15px;
 }
 
 header p {
@@ -68,8 +69,9 @@ a {
   display: inline-block;
 }
 
-a::after {
+a::after, .btn::after {
   content: "";
+  z-index: 10000;
   position: absolute;
   width: 100%;
   background-color: var(--hl);
@@ -87,6 +89,22 @@ a:hover::after {
   transform: scaleX(0);
 }
 
+.btn {
+  padding: 10px 20px;
+  border: 2px solid var(--fg);
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  transition-duration: 0.4s;
+  border: 2px solid var(--hl);
+}
+
+nav {
+  margin: 25px;
+  cursor: pointer;
+}
+
 .filterEl a {
   text-transform: uppercase;
   font-family: var(--font-header);
@@ -94,11 +112,16 @@ a:hover::after {
   font-size: 1.25em;
 }
 .filterEl h5 {
+  position: absolute;
+  top: 35px;
+  right: 25px;
   margin-bottom: 5px;
   opacity: 0.8;
 }
 
 .filterEl h6 {
+  position: absolute;
+  right: 25px;
   margin-bottom: 10px;
   opacity: 0.8;
 }
@@ -134,10 +157,9 @@ main, #noResult{
 }
 
 main {
-  display: grid;
-  grid-gap: 25px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, auto);
+  z-index: -1000;
+  display: flex;
+  flex-direction: column;
 }
 
 #noResult {
@@ -161,6 +183,7 @@ main {
 .filterEl {
   border-radius: 10px;
   background-color: var(--mg);
+  margin: 10px 0;
   padding: 25px;
   float: left;
   transition-duration: 0.4s;
@@ -172,6 +195,36 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+/* nav menu */
+
+nav {
+  position: fixed;
+  bottom: 25px;
+  z-index: 10000000;
+}
+
+/* about page */
+#about {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg);
+  transition-duration: 0.4s;
+}
+
+#about #closeAbout {
+  cursor: pointer;
+  pointer-events: all;
+  margin-bottom: 25px;
 }
 
 /* form styling */
