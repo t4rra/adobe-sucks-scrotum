@@ -71,22 +71,22 @@ function openModal() {
   modal.style.opacity = "1";
   modal.style.pointerEvents = "all";
   document.querySelector("body").style.overflow = "hidden";
-  document.querySelector("main").style.zIndex = "-100";
 }
 
 function closeModal() {
   modal.style.opacity = "0";
   modal.style.pointerEvents = "none";
   document.querySelector("body").style.overflow = "auto";
-  document.querySelector("main").style.zIndex = "0";
 }
 
 btn.onclick = function () {
   openModal();
+  document.querySelector("main").style.zIndex = "-100";
 };
 
 closebtn.onclick = function () {
   closeModal();
+  document.querySelector("main").style.zIndex = "0";
 };
 
 window.onclick = function (event) {
@@ -94,7 +94,7 @@ window.onclick = function (event) {
     modal.style.opacity = "0";
     modal.style.pointerEvents = "none";
     setTimeout();
-  document.querySelector("body").style.overflow = "auto";
+    document.querySelector("body").style.overflow = "auto";
 
     document.querySelector("main").style.zIndex = "0";
   }
