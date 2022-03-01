@@ -176,9 +176,9 @@ main {
 
 #filterContainer {
   margin-top: 25px;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(2, auto);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .filterEl {
@@ -260,7 +260,7 @@ label {
   display: block;
   cursor: pointer;
   line-height: 2.5;
-  font-size: 1.5em;
+  font-size: 1.5vw;
   transition-duration: 0.4s;
 }
 
