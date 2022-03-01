@@ -219,6 +219,7 @@ nav {
   height: 100vh;
   background-color: var(--bg);
   transition-duration: 0.4s;
+  margin: -25px;
 }
 
 #about>* {
