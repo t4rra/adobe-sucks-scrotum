@@ -69,7 +69,7 @@ a {
   display: inline-block;
 }
 
-a::after, .btn::after {
+a::after {
   content: "";
   z-index: 10000;
   position: absolute;
@@ -89,13 +89,13 @@ a:hover::after {
   transform: scaleX(0);
 }
 
-.btn {
+.btn, button {
   padding: 10px 20px;
   border: 2px solid var(--fg);
   transition-duration: 0.4s;
 }
 
-.btn:hover {
+.btn:hover, button:hover {
   transition-duration: 0.4s;
   border: 2px solid var(--hl);
 }
