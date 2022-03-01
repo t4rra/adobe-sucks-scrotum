@@ -157,14 +157,12 @@ main, #noResult{
 }
 
 main {
-  z-index: -1000;
   display: flex;
   flex-direction: column;
 }
 
 #noResult {
   position: fixed;
-  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,7 +207,6 @@ nav {
 #about {
   position: fixed;
   pointer-events: none;
-  z-index: 1000;
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -219,6 +216,10 @@ nav {
   height: 100vh;
   background-color: var(--bg);
   transition-duration: 0.4s;
+}
+
+#about>* {
+  z-index: 10000000;
 }
 
 #about #closeAbout {

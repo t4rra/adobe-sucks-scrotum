@@ -71,17 +71,19 @@ btn.onclick = function () {
   modal.style.opacity = "1";
   modal.style.pointerEvents = "all";
   document.querySelector("body").style.overflow = "hidden";
+  // document.querySelector("main").style.zIndex = "-100";
 };
 
 closebtn.onclick = function () {
   modal.style.opacity = "0";
   modal.style.pointerEvents = "none";
   document.querySelector("body").style.overflow = "auto";
+  // document.querySelector("main").style.zIndex = "0";
 };
 
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.opacity = "0";
-//     modal.style.pointerEvents = "none";
-//   }
-// };
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.opacity = "0";
+    modal.style.pointerEvents = "none";
+  }
+};
