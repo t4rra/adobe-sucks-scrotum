@@ -94,6 +94,7 @@ a:hover::after {
   border: 2px solid var(--fg);
   transition-duration: 0.4s;
   background-color: var(--bg);
+  color: var(--fg);
 }
 
 .btn:hover, button:hover {
