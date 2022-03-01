@@ -67,24 +67,35 @@ var btn = document.getElementById("openAbout");
 
 var closebtn = document.getElementById("closeAbout");
 
-btn.onclick = function () {
+function openModal() {
   modal.style.opacity = "1";
   modal.style.pointerEvents = "all";
   document.querySelector("body").style.overflow = "hidden";
   document.querySelector("main").style.zIndex = "-100";
-};
+}
 
-closebtn.onclick = function () {
+function closeModal() {
   modal.style.opacity = "0";
   modal.style.pointerEvents = "none";
   document.querySelector("body").style.overflow = "auto";
   document.querySelector("main").style.zIndex = "0";
+}
+
+btn.onclick = function () {
+  openModal();
+};
+
+closebtn.onclick = function () {
+  closeModal();
 };
 
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.opacity = "0";
     modal.style.pointerEvents = "none";
+    setTimeout();
+  document.querySelector("body").style.overflow = "auto";
+
     document.querySelector("main").style.zIndex = "0";
   }
 };
