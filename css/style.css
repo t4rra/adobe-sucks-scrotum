@@ -10,7 +10,7 @@
 
 :root {
   --bg: #111516;
-  --mg: #1E2324;
+  --mg: #1e2324;
   --fg: #e8f3ed;
   --hl: #f55d3e;
 
@@ -53,7 +53,7 @@ header h1 {
 }
 
 header h6 {
-  font-size: 1vw;
+  font-size: 0.75vw;
   margin-bottom: 15px;
 }
 
@@ -89,23 +89,32 @@ a:hover::after {
   transform: scaleX(0);
 }
 
-.btn, button {
+.btn,
+button {
+  width: min-content;
+  margin-top: 20px;
   padding: 10px 20px;
-  border: 2px solid var(--fg);
+  border-radius: 100vh;
+  border: 4px solid var(--fg);
   transition-duration: 0.4s;
   background-color: var(--bg);
   color: var(--fg);
   cursor: pointer;
 }
 
-.btn:hover, button:hover {
+.btn:hover,
+button:hover {
   transition-duration: 0.4s;
-  border: 2px solid var(--hl);
+  border-color: var(--hl);
 }
 
 nav {
   margin: 25px;
   cursor: pointer;
+}
+
+.filterEl p {
+  font-size: 0.75vw;
 }
 
 .filterEl a {
@@ -114,9 +123,14 @@ nav {
   margin-bottom: 5px;
   font-size: 1.25em;
 }
+
+.filterEl h1 {
+  font-size: 1vw;
+}
+
 .filterEl h5 {
   position: absolute;
-  top: 35px;
+  top: 25px;
   right: 25px;
   margin-bottom: 5px;
   opacity: 0.8;
@@ -143,7 +157,6 @@ body {
 
 header {
   width: 32vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,7 +164,8 @@ header {
   margin: 25px;
 }
 
-main, #noResult{
+main,
+#noResult {
   width: 63vw;
   top: 0;
   right: 0;
@@ -219,10 +233,9 @@ nav {
   height: 100vh;
   background-color: var(--bg);
   transition-duration: 0.4s;
-  margin-top: -25px;
 }
 
-#about>* {
+#about > * {
   z-index: 10000000;
 }
 
@@ -238,16 +251,17 @@ form {
   flex-direction: column;
 }
 
- /* Thanks https://codepen.io/SitePoint/pen/VwNWJa */
+/* Thanks https://codepen.io/SitePoint/pen/VwNWJa */
 
- /* css reset for default radio button */
+/* css reset for default radio button */
 [type="radio"] {
-  border: 0; 
-  clip: rect(0 0 0 0); 
-  height: 1px; margin: -1px; 
-  overflow: hidden; 
-  padding: 0; 
-  position: absolute; 
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
   width: 1px;
 }
 
@@ -280,7 +294,7 @@ label:hover {
 /* the basic, unchecked style */
 [type="radio"] + span:before {
   background-color: var(--fg);
-  content: '';
+  content: "";
   display: inline-block;
   width: 0.5em;
   height: 0.5em;

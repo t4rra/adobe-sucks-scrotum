@@ -1,0 +1,10 @@
+[
+  {
+    "altAppName": "Blender",
+    "adobeAppName": "After Effects",
+	"adobeAppClass": "afterfx",
+	"recUseCase": "Compositing",
+	"description": "The only thing Blender can't do is bake a cake!",
+    "pricing": ["free", "foss"]
+  }
+]

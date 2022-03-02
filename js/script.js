@@ -70,13 +70,18 @@ var closebtn = document.getElementById("closeAbout");
 function openModal() {
   modal.style.opacity = "1";
   modal.style.pointerEvents = "all";
-  document.querySelector("body").style.overflow = "hidden";
+  setTimeout(() => {
+    document.querySelector("body").style.overflow = "hidden";
+  }, 400);
 }
 
 function closeModal() {
   modal.style.opacity = "0";
   modal.style.pointerEvents = "none";
   document.querySelector("body").style.overflow = "auto";
+  setTimeout(() => {
+    document.querySelector("main").style.zIndex = "0";
+  }, 400);
 }
 
 btn.onclick = function () {
@@ -86,16 +91,10 @@ btn.onclick = function () {
 
 closebtn.onclick = function () {
   closeModal();
-  document.querySelector("main").style.zIndex = "0";
 };
 
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.opacity = "0";
-    modal.style.pointerEvents = "none";
-    setTimeout();
-    document.querySelector("body").style.overflow = "auto";
-
-    document.querySelector("main").style.zIndex = "0";
+    closeModal();
   }
 };
