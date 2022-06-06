@@ -1,0 +1,47 @@
+[[redirects]]
+  from = "/github"
+  to = "https://github.com/eaaasun"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/gh"
+  to = "https://github.com/eaaasun"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/youtube"
+  to = "https://www.youtube.com/channel/UCdamHTyE-YUIR8mvbUYPbCw?sub_confirmation=1"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/yt"
+  to = "https://www.youtube.com/channel/UCdamHTyE-YUIR8mvbUYPbCw?sub_confirmation=1"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/instagram"
+  to = "https://instagram.com/eaaasun"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ig"
+  to = "https://instagram.com/eaaasun"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/CCStopper"
+  to = "https://github.com/eaaasun/CCStopper"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+  force = false

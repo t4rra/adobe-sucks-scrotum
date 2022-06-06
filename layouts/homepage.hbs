@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EASUN</title>
+
+	<!-- fonts -->
+	<link rel="stylesheet" href="./media/fonts/MonumentExtended.css">
+	<link rel="stylesheet" href="./media/fonts/BarCode.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/locomotive-scroll.css">
+
+	<!-- locomotive scroll -->
+	<script src="./js/locomotive-scroll.min.js"></script>
+
+	<!-- anime.js -->
+	<!-- <script src="./js/anime.min.js"></script> -->
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+</head>
+
+<body id="home" data-scroll-container>
+	<div id="preload" class="">
+		<h1>easun</h1>
+		<p>Loading... Please wait.</p>
+		<a href="#" id="hidePreloader">Looks like it's taking too long to load. Click me to remove the preloader.</a>
+	</div>
+
+	<nav data-scroll-sticky>
+		<div id="logo">
+			<a href="#" data-scrollTo="header" class="anchorLink">*EASUN*</a>
+		</div>
+		<div id="links">
+			<a data-scrollTo="main section" class="anchorLink" href="#">WORKS</a>
+			<a data-scrollTo="footer" class="anchorLink" href="#">CONTACT</a>
+		</div>
+	</nav>
+	<header data-scroll-section>
+		<section id="topBlock">
+			<h1 class="fadeUp" data-scroll-speed="2" data-scroll-delay="0.05" data-scroll-position="top" data-scroll>
+				PHOTOG<wbr>RAPHER
+			</h1>
+			<img class="fadeUp" data-scroll data-scroll-speed="5" data-scroll-delay="0.06" data-scroll-position="top"
+				src="./media/images/homepage/yosemite waterfall-min.jpg" alt="yosemite waterfall">
+		</section>
+		<section id="bottomBlock">
+			<img class="fadeUp" data-scroll-speed="5" data-scroll-delay="0.08" data-scroll data-scroll-position="top"
+				src="./media/images/homepage/astro self portrait-min.jpg" alt="">
+			<div>
+				<h1 class="fadeUp" data-scroll-speed="1" data-scroll-delay="0.07" data-scroll>FILM<wbr>MAKER</h1>
+				<h1 class="fadeUp" data-scroll-speed="2" data-scroll-delay="0.08" data-scroll>DESI<wbr>GNER</h1>
+			</div>
+		</section>
+	</header>
+	<main data-scroll-section>
+		<p data-scroll-speed="-1.5" data-scroll>I’m Easun, a filmmaker/photographer and motion designer.<br><br>I
+			also
+			have an interest in web/graphic
+			design, virtual
+			reality, keyboards, and programming.</p>
+			{{#if projects }}
+		<section id="projects" data-scroll-speed="-1" data-scroll>
+			<table>
+				{{#each projects}}
+				<tr>
+					<th>
+						<h1>
+							<a href="{{ path }}" class="int-link">{{ title }}</a>
+						</h1>
+					</th>
+					<td class="hoverImg">
+						<img src=".{{ smallHeaderImage }}" alt="">
+					</td>
+					<td>
+						<h2>{{ projectType }}</h2>
+						<h2>{{ projectClient }} - {{ projectYear }}</h2>
+					</td>
+				</tr>
+				{{/each}}
+			</table>
+		</section>
+		{{/if}}
+	</main>
+	<footer data-scroll-section>
+		<img src="./media/images/homepage/long exp waterfall-min.jpg" alt="" data-scroll-speed="3.5"
+			data-scroll-position="bottom" data-scroll>
+		<div id="footerRight">
+			<section id="tables" data-scroll-speed="-0.5" data-scroll-position="bottom" data-scroll>
+				<table>
+					<tr>
+						<th>
+							<h3>BASED IN</h3>
+						</th>
+						<td>
+							<h3>UNITED STATES</h3>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<h3>AVAILABILITY</h3>
+						</th>
+						<td>
+							<h3>JUNE 2022</h3>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<th>
+							<h3>EMAIL</h3>
+						</th>
+						<td>
+							<h3><a href="mailto:business@easun.me" target="_blank">business@easun.me</a></h3>
+						</td>
+					<tr>
+					<tr>
+						<th>
+							<h3>INSTAGRAM</h3>
+						</th>
+						<td>
+							<h3><a href="https://instagram.com/eaaasun" target="_blank">@EAAASUN</a></h3>
+						</td>
+					<tr>
+						<th>
+							<h3>YOUTUBE</h3>
+						</th>
+						<td>
+							<h3><a href="https://www.youtube.com/channel/UCdamHTyE-YUIR8mvbUYPbCw" target="_blank">EASUN</a></h3>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<h3>GITHUB</h3>
+						</th>
+						<td>
+							<h3><a href="https://github.com/eaaasun" target="_blank">@EAAASUN</a></h3>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<h3>SCORESABER</h3>
+						</th>
+						<td>
+							<h3><a href="https://scoresaber.com/u/76561198870563581" target="_blank"
+									id="scoresaberRank">RANK LOADING</a></h3>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+	</footer>
+	<script>
+		// grabs json data from url, thanks https://stackoverflow.com/a/35970894
+		var getJSON = function (url, callback) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", url, true);
+			xhr.responseType = "json";
+			xhr.onload = function () {
+				var status = xhr.status;
+				if (status === 200) {
+					callback(null, xhr.response);
+				} else {
+					callback(status, xhr.response);
+				}
+			};
+			xhr.send();
+		};
+
+		getJSON(
+			"https://corsproxy.io/?https://scoresaber.com/api/player/76561198870563581/basic",
+			function (err, data) {
+				if (err !== null) {
+					document.getElementById("scoresaberRank").innerText = "RANK UNAVAILABLE";
+				} else {
+					document.getElementById("scoresaberRank").innerText = "RANK #" + data.rank;
+				}
+			}
+		);
+	</script>
+	<script src="./js/script.js"></script>
+	<script src="./js/locomotiveActivate.js"></script>
+</body>
+
+</html>

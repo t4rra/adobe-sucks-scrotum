@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADOBE SUCKS (SCROTUM)</title>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="./media/fonts/MonumentExtended.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- anime.js -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    ></script>
+
+  </head>
+
+  <body>
+    <nav>
+      <div id="logo">
+        <h1>ADOBE SUCKS</h1>
+        <h6>(SCROTUM)</h6>
+      </div>
+      <div id="links">
+        <a id="aboutLink" href="#">ABOUT</a>
+        <a href="#">ADD APP</a>
+      </div>
+    </nav>
+    <header>
+      <div id="searchBar">
+        <input type="text" placeholder="KRITA, BLENDER, ETC." />
+      </div>
+      <div id="filterMenu">
+
+        <form id="appFilter" autocomplete="off">
+          <label for="button-all"><input
+              type="radio"
+              id="button-all"
+              name="mainFilter"
+              value="filterEl"
+              checked="true"
+            /><span>All Apps</span></label>
+          {{#each adobeApps}}
+            <label for="button-{{abbreviation}}"><input
+                type="radio"
+                id="button-{{abbreviation}}"
+                name="mainFilter"
+                value="{{abbreviation}}"
+              /><span>{{name}}</span></label>
+          {{/each}}
+        </form>
+
+        <form id="priceFilter">
+          <label for="filter-all"><input
+              type="radio"
+              id="filter-all"
+              name="secondaryFilter"
+              value="filterEl"
+              checked="true"
+            /><span>All Pricing</span></label>
+          {{#each pricingOptions}}
+            <label for="filter-{{label}}"><input
+                type="radio"
+                id="filter-{{label}}"
+                name="secondaryFilter"
+                value="{{label}}"
+              /><span>{{name}}</span></label>
+          {{/each}}
+
+        </form>
+      </div>
+    </header>
+    <main>
+      {{#if altApps}}
+        {{#each altApps}}
+          <div class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{label}} {{/each}}">
+            <h1>{{ title }}</h1>
+            <div class="tags">
+              <h5>{{#each replaces}}{{name}}, {{/each}}</h5>
+              <h5>{{#each pricing}}{{name}}, {{/each}}</h5>
+            </div>
+            <p>{{description}}</p>
+              <a
+                href="{{ downloadLink }}"
+                target="_blank"
+              >Website</a>
+            </div>
+          </div>
+
+        {{/each}}
+      {{/if}}
+    </main>
+    <footer>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+
+</html>
