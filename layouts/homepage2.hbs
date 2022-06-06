@@ -24,7 +24,6 @@
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
     ></script>
-
   </head>
 
   <body>
@@ -34,16 +33,18 @@
         <h6>(SCROTUM)</h6>
       </div>
       <div id="links">
-        <a id="aboutLink" href="#">ABOUT</a>
+        <a id="aboutLink" href="#">MENU/FILTER</a>
         <a href="#">ADD APP</a>
       </div>
     </nav>
-    <header>
-      <div id="searchBar">
-        <input type="text" placeholder="KRITA, BLENDER, ETC." />
-      </div>
-      <div id="filterMenu">
 
+    <div id="searchBar" class="">
+      <input type="text" placeholder="KRITA, BLENDER, ETC." />
+    </div>
+
+    <header>
+      <div id="filterAboutMenu" data-menu="hidden">
+        <div id="filterMenu">
         <form id="appFilter" autocomplete="off">
           <label for="button-all"><input
               type="radio"
@@ -61,7 +62,6 @@
               /><span>{{name}}</span></label>
           {{/each}}
         </form>
-
         <form id="priceFilter">
           <label for="filter-all"><input
               type="radio"
@@ -80,13 +80,32 @@
           {{/each}}
 
         </form>
+        </div>
+        <div id="about">
+          <section>
+            <h1>ADOBE SUCKS.</h1>
+            <p>They really do. They've had a chokehold on the industry for far too long. None of us can change that... at least not alone. If enough people use and share alternatives, it'll pressure Adobe to stop its complacency and will benefit the end user.</p>
+          </section>
+          <section>
+            <h1>DON'T PIRATE.</h1>
+            <p>
+              Please don't pirate. <br> 1) It's illegal. <br> 2) Piracy still benefits Adobe by increasing their market share. <br> 3) Smaller alternatives need your support to grow and become better than Adobe's offerings.</p>
+          </section>
+          <section>
+            <h1>WANT TO CONTRIBUTE?</h1>
+            <p>If you have a good alternative to an Adobe app, please use <a href="#">this</a> form to submit it. Make sure that the app uses a free or one-time payment model.</p>
+          </section>
+          <section>
+            <p id="madeBy">Another thing by <a href="https://easun.me" target="_blank">Easun.</a></p>
+          </section>
+        </div>
       </div>
     </header>
     <main>
       {{#if altApps}}
         {{#each altApps}}
           <div class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{label}} {{/each}}">
-            <h1>{{ title }}</h1>
+            <h2>{{ title }}</h2>
             <div class="tags">
               <h5>{{#each replaces}}{{name}}, {{/each}}</h5>
               <h5>{{#each pricing}}{{name}}, {{/each}}</h5>

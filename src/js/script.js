@@ -99,3 +99,23 @@ document.addEventListener("input", update);
 // 	  closeModal();
 // 	}
 //   };
+
+menuEl = document.querySelector("#filterAboutMenu");
+body = document.querySelector("body");
+
+
+function menuToggle() {
+  if (menuEl.getAttribute("data-menu") == "visible") {
+    menuEl.setAttribute("data-menu", "hidden");
+    body.style.overflow = "auto";
+  } else {
+    menuEl.setAttribute("data-menu", "visible");
+    body.style.overflow = "hidden";
+  }
+}
+
+menuBtn = document.querySelector("#aboutLink");
+
+menuBtn.onclick = function () {
+  menuToggle();
+};
