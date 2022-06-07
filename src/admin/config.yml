@@ -38,11 +38,11 @@ collections:
         widget: "list"
         allow_add: true
         required: true
+        max: 3
         fields:
           - label: "Pricing"
             widget: "select"
             name: "price"
-            max: 3
             options: ["Free", "Paid", "FOSS"]
 
       - label: "Description"
