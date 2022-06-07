@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  scrollbar-width: thin;
 }
 
 [data-visible="invisible"] {
@@ -21,6 +22,10 @@
   --font-body: "PT Mono", monospace;
 
   --style-border: 2px solid var(--color-middle_light);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -95,7 +100,7 @@ nav #logo {
 }
 
 [data-menu="visible"] {
-  height: 85%;
+  height: calc(100% - 60px);
   transition-duration: 0.8s;
 }
 
@@ -105,9 +110,9 @@ nav #logo {
   box-sizing: border-box;
   position: fixed;
   width: 100%;
-  background-color: var(--color-background);
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: var(--color-background);
 }
 
 #filterMenu {
@@ -191,6 +196,7 @@ label:hover {
 
 #about h1 {
   font-size: 2.25em;
+  margin-bottom: 25px;
 }
 
 #about p {
@@ -198,7 +204,7 @@ label:hover {
 }
 
 #about section {
-  margin: 50px 0;
+  margin: 75px 0;
 }
 
 #about section #madeBy {

@@ -49,10 +49,8 @@ function update() {
 
   // checks if any element's data-visible attribute is visible
   if (document.querySelectorAll("[data-visible='visible']").length > 0) {
-    console.log("there is a result");
     document.getElementById("noResult").classList.add("hidden");
   } else {
-    console.log("there is no results");
     document.getElementById("noResult").classList.remove("hidden");
   }
   console.log(selectedApp);
@@ -60,15 +58,18 @@ function update() {
 
 document.addEventListener("input", update);
 
+// about menu open
 menuEl = document.querySelector("#filterAboutMenu");
 body = document.querySelector("body");
 
-
 function menuToggle() {
   if (menuEl.getAttribute("data-menu") == "visible") {
+    // hide element
     menuEl.setAttribute("data-menu", "hidden");
     body.style.overflow = "auto";
   } else {
+    //show element
+    
     menuEl.setAttribute("data-menu", "visible");
     body.style.overflow = "hidden";
   }
@@ -76,6 +77,22 @@ function menuToggle() {
 
 menuBtn = document.querySelector("#aboutLink");
 
-menuBtn.onclick = function () {
+menuBtn.addEventListener("click", function (event) {
+  event.preventDefault();
   menuToggle();
-};
+});
+
+// get height of element
+function getHeight(el) {
+  var viewportOffset = el.getBoundingClientRect();
+  var top = viewportOffset.bottom;
+  return top;
+}
+
+window.addEventListener("scroll", function () {
+  var menuOffset = getHeight(document.querySelector("#links"));
+  menuEl.style.top = menuOffset + "px";
+});
+
+
+// document.querySelector("[data-menu='visible']").style.height = "calc(100% -" + menuOffset + "px)";

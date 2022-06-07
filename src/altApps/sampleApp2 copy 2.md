@@ -10,6 +10,9 @@ replaces:
 pricing:
   - name: paid
     label: paid
-description: paid app for vector and image manipulation, with ui tools to boot.
+  - name: free
+    label: free
+    
+description: paid app for vector and image manipulation, with ui tools to boot. free option too
 downloadLink: https://example.com
 ---
