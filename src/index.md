@@ -29,9 +29,6 @@ adobeApps:
     abbreviation: OTHER
 pricingOptions:
   - name: Free
-    label: free
   - name: Paid
-    label: paid
-  - name: Open Source
-    label: foss
+  - name: FOSS
 ---

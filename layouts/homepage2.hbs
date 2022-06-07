@@ -110,7 +110,7 @@
     <main>
       {{#if altApps}}
         {{#each altApps}}
-          <div data-visible="" class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{label}} {{/each}}">
+          <div data-visible="" class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{name}} {{/each}}">
             <h2>{{ title }}</h2>
             <div class="tags">
               <div class="replaces">
@@ -120,7 +120,7 @@
               </div>
               <div class="pricing">
                 {{#each pricing}}
-                  <h5>{{label}}</h5>
+                  <h5>{{name}}</h5>
                 {{/each}}
               </div>
             </div>

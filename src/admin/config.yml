@@ -19,84 +19,25 @@ collections:
         required: true
 
       - label: "Replaces"
-        name: "replaces"
+        name: "adobeApps"
         widget: "list"
         allow_add: true
         required: true
         fields:
-          - label: Adobe App
-            widget: "object"
-            summary: "{{fields.asfd}}/{{fields.asdf}}"
-            fields:
-              - label: "Name"
-                name: "name"
-                widget: "select"
-                options: ["Acrobat", "After Effects", "Animate", "Audition", "Dreamweaver", "InDesign", "Illustrator", "Lightroom", "Photoshop", "Premiere", "Substance", "Other"]
+          - label: Adobe App Name
+            widget: "select"
+            name: "name"
+            widget: "select"
+            options: ["Acrobat", "After Effects", "Animate", "Audition", "Dreamweaver", "InDesign", "Illustrator", "Lightroom", "Photoshop", "Premiere", "Substance", "Other"]
+          - label: Adobe App Abbreviation
+            widget: "select"
+            name: "abbreviation"
+            widget: "select"
+            options: ["ACR", "AE", "AN", "AU", "DW", "ID", "AI", "LR", "PS", "PR", "SU", "OTHER"]
 
-      - label: "External Link"
-        name: "externalLink"
-        widget: "list"
-        allow_add: true
-        required: false
-        fields:
-          - { label: Link URL, name: link, widget: string }
-          - { label: Link Text, name: text, widget: string }
 
-      - label: "Page Layout"
-        name: "layout"
-        widget: "select"
-        options: ["project.hbs"]
-        default: "project.hbs"
-        required: true
-
-      - label: "Project Type"
-        name: "projectType"
-        widget: "string"
-        required: true
-
-      - label: "Project Client"
-        name: "projectClient"
-        widget: "string"
-        required: true
-
-      - label: "Project Year"
-        name: "projectYear"
-        widget: "datetime"
-        format: "YYYY"
-        required: true
-
-      - label: "Small Header Image"
-        name: "smallHeaderImage"
-        widget: "image"
-        allow_multiple: false
-        choose_url: false
-        required: false
-
-      - label: "Header Image"
-        name: "headerImage"
-        widget: "image"
-        allow_multiple: false
-        choose_url: false
-        required: true
-
-      - label: "Video Link"
-        name: "videoLink"
-        widget: "string"
-        required: false
-        hint: "Make sure video link is /embed/ instead of watch!"
-
-      - label: "External Link"
-        name: "externalLink"
-        widget: "list"
-        allow_add: true
-        required: false
-        fields:
-          - { label: Link URL, name: link, widget: string }
-          - { label: Link Text, name: text, widget: string }
-
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-        allow_multiple: false
-        required: false
-        hint: "Use header 3 for text!"
+      - label: "Pricing"
+          widget: "select"
+          name: "name"
+          widget: "select"
+          options: ["Free", "Paid", "FOSS"]
