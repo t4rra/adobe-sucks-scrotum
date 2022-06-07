@@ -24,13 +24,11 @@ collections:
         allow_add: true
         required: true
         fields:
-          - label: "App Name"
+          - label: "Adobe App Name"
             widget: "select"
             name: "name"
-            widget: "select"
             options: ["Acrobat", "After Effects", "Animate", "Audition", "Dreamweaver", "InDesign", "Illustrator", "Lightroom", "Photoshop", "Premiere", "Substance", "Other"]
-          - label: "App Abbreviation"
-            widget: "select"
+          - label: "Adobe App Abbreviation"
             name: "abbreviation"
             widget: "select"
             options: ["ACR", "AE", "AN", "AU", "DW", "ID", "AI", "LR", "PS", "PR", "SU", "OTHER"]
