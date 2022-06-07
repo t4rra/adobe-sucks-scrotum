@@ -4,7 +4,7 @@ adobeApps:
   - name: Acrobat
     abbreviation: ACR
 pricingOptions:
-  - price: Free
+  - price: free
 description: free acrobat replacement
 downloadLink: https://example.com
 ---
