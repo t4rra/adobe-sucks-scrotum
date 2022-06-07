@@ -5,7 +5,7 @@ adobeApps:
     abbreviation: AN
 price:
   - price: Free
-  - price: Paid
+  - price: FOSS
 description: idk lmao
 downloadLink: https://example.com
 ---
