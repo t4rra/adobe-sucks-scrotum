@@ -37,7 +37,7 @@ collections:
 
       - label: "Pricing"
           widget: "select"
-          name: "name"
+          name: "price"
           widget: "select"
           options: ["Free", "Paid", "FOSS"]
 

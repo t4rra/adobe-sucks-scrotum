@@ -73,12 +73,12 @@
               checked="true"
             /><span>All Pricing</span></label>
           {{#each pricingOptions}}
-            <label for="filter-{{name}}"><input
+            <label for="filter-{{price}}"><input
                 type="radio"
-                id="filter-{{name}}"
+                id="filter-{{price}}"
                 name="secondaryFilter"
-                value="{{name}}"
-              /><span>{{name}}</span></label>
+                value="{{price}}"
+              /><span>{{price}}</span></label>
           {{/each}}
 
         </form>
@@ -120,7 +120,7 @@
               </div>
               <div class="pricing">
                 {{#each pricing}}
-                  <h5>{{name}}</h5>
+                  <h5>{{price}}</h5>
                 {{/each}}
               </div>
             </div>

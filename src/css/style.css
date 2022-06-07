@@ -424,6 +424,14 @@ main {
     align-self: end;
   }
 
+  #noResult {
+    width: 100%;
+  }
+
+  #noResult p, #noResult h2 {
+    width: 30%;
+  }
+
   main {
     display: grid;
     position: relative;

@@ -28,7 +28,7 @@ adobeApps:
   - name: Other
     abbreviation: OTHER
 pricingOptions:
-  - name: free
-  - name: paid
-  - name: foss
+  - price: free
+  - price: paid
+  - price: foss
 ---
