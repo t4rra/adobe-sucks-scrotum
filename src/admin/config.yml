@@ -36,9 +36,10 @@ collections:
       - label: "Pricing"
         name: "price"
         widget: "list"
+        max: 3
+        min: 1
         allow_add: true
         required: true
-        max: 3
         fields:
           - label: "Pricing"
             widget: "select"
