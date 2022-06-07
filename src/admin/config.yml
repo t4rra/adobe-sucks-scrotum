@@ -34,7 +34,7 @@ collections:
             options: ["ACR", "AE", "AN", "AU", "DW", "ID", "AI", "LR", "PS", "PR", "SU", "OTHER"]
 
       - label: "Pricing"
-        name: "price"
+        name: "pricingOptions"
         widget: "list"
         max: 3
         min: 1
