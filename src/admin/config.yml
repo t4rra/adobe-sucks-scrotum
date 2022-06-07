@@ -34,10 +34,10 @@ collections:
             options: ["ACR", "AE", "AN", "AU", "DW", "ID", "AI", "LR", "PS", "PR", "SU", "OTHER"]
 
       - label: "Pricing"
-          widget: "select"
-          name: "price"
-          widget: "select"
-          options: ["Free", "Paid", "FOSS"]
+        widget: "select"
+        name: "price"
+        widget: "select"
+        options: ["Free", "Paid", "FOSS"]
 
       - label: "Description"
         name: "description"
