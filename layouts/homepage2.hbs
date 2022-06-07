@@ -110,11 +110,11 @@
     <main>
       {{#if altApps}}
         {{#each altApps}}
-          <div data-visible="" class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{name}} {{/each}}">
+          <div data-visible="" class="filterEl {{#each adobeApps}}{{abbreviation}} {{/each}}{{#each pricing}}{{name}} {{/each}}">
             <h2>{{ title }}</h2>
             <div class="tags">
               <div class="replaces">
-                {{#each replaces}}
+                {{#each adobeApps}}
                   <h5>{{abbreviation}}</h5>
                 {{/each}}
               </div>
