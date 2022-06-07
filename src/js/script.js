@@ -62,6 +62,7 @@ document.addEventListener("input", update);
 // about menu 
 var menuEl = document.querySelector("#filterAboutMenu");
 var menuBtn = document.querySelector("#aboutLink");
+var body = document.querySelector("body");
 
 function getMenuOffset() {
   offsetBoundingClient = menuBtn.getBoundingClientRect();
@@ -87,15 +88,22 @@ function animateMenu(direction) {
 
 function menuToggle() {
   if (menuEl.getAttribute("data-menu") == "visible") {
+    // menu is visible, so hide it and enable scrolling
+    body.style.overflow = "auto";
     animateMenu("reverse");
     menuEl.setAttribute("data-menu", "hidden");
   } else {
+    // menu is hidden, so show it and disable scrolling
+    body.style.overflow = "hidden";
     animateMenu("normal");
     menuEl.setAttribute("data-menu", "visible");
   }
 }
 
-menuBtn.addEventListener("click", menuToggle);
+menuBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  menuToggle();
+});
 
 // about menu open
 // menuEl = document.querySelector("#filterAboutMenu");
