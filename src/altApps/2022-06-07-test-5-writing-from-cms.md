@@ -1,13 +1,12 @@
 ---
-title: test 5 writing from cms
+title: test 5
 adobeApps:
-  - name: Animate
-    abbreviation: AN
-  - name: Substance
-    abbreviation: SU
+  - name: After Effects
+    abbreviation: AE
+  - name: Illustrator
+    abbreviation: AI
 pricingOptions:
   - price: Free
-  - price: FOSS
 description: idk
 downloadLink: https://example.com
 ---
