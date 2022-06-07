@@ -7,9 +7,9 @@ public_folder: "../../uploads"
 publish_mode: editorial_workflow
 
 collections:
-  - name: "projects"
-    label: "Projects"
-    folder: "src/pages"
+  - name: "altApps"
+    label: "Alternate Apps"
+    folder: "src/altApps"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
