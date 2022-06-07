@@ -1,11 +1,10 @@
 ---
-title: test 4 ive given up pls work
+title: test 4
 adobeApps:
-  - name: After Effects
-    abbreviation: AE
+  - name: Acrobat
+    abbreviation: ACR
 pricingOptions:
   - price: Free
-  - price: FOSS
-description: foss/free/ae
+description: free acrobat replacement
 downloadLink: https://example.com
 ---
