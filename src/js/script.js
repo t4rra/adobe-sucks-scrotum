@@ -82,6 +82,8 @@ function animateMenu(direction) {
   anime({
     targets: "#filterAboutMenu",
     height: [0, "calc(100% - " + getMenuOffset() + "px)"],
+    duration: 800,
+    easing: "easeInOutExpo",
     direction: direction,
   })
 }
@@ -104,71 +106,3 @@ menuBtn.addEventListener("click", function(event) {
   event.preventDefault();
   menuToggle();
 });
-
-// about menu open
-// menuEl = document.querySelector("#filterAboutMenu");
-// body = document.querySelector("body");
-
-
-// // get bottom offset of element (pixels from bottom of menu btn to top of page)
-// function getBottomOffset(el) {
-//   var viewportOffset = el.getBoundingClientRect();
-//   var bottom = viewportOffset.bottom;
-//   console.log("bottom: " + bottom);
-//   return bottom;
-// }
-
-// // sets the menu to the offset of the menu btn
-// function setMenuOffset() {
-//   menuEl.style.top = getBottomOffset(document.querySelector("#links")) + "px";
-//   return getBottomOffset(document.querySelector("#links") + "px");
-// }
-
-// setMenuOffset();
-
-// // get offset of menu on scroll
-// window.addEventListener("scroll", function () {
-//   console.log("window scrolled");
-//   setMenuOffset();
-// });
-
-// function openMenu() {
-//   anime({
-//     targets: menuEl,
-//     height: "calc(100% - " + menuOffset + "px)",
-//     duration: 800,
-//     easing: "cubic-bezier( 0.63, 0, 0.23, 1 )",
-//   });
-// }
-
-// function closeMenu() {
-//   anime({
-//     targets: menuEl,
-//     height: "0",
-//     duration: 800,
-//     easing: "cubic-bezier( 0.63, 0, 0.23, 1 )",
-//   });
-// }
-
-// function menuToggle() {
-//   if (menuEl.getAttribute("data-menu") == "visible") {
-//     // hide element
-//     menuEl.setAttribute("data-menu", "hidden");
-//     closeMenu();
-//     body.style.overflow = "auto";
-//   } else {
-//     //show element
-//     openMenu();
-//     menuEl.setAttribute("data-menu", "visible");
-//     body.style.overflow = "hidden";
-//   }
-// }
-
-// menuBtn = document.querySelector("#aboutLink");
-
-// menuBtn.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   menuToggle();
-// });
-
-// document.querySelector("[data-menu='visible']").style.height = "calc(100% -" + menuOffset + "px)";

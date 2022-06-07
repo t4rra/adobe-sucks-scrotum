@@ -95,14 +95,7 @@ nav #logo {
 /* header */
 [data-menu="hidden"] {
   height: 0;
-  /* transition-duration: 0.8s;
-  transition-timing-function: cubic-bezier( 0.63, 0, 0.23, 1 ); */
 }
-
-/* [data-menu="visible"] {
-  height: calc(100% - 60px);
-  transition-duration: 0.8s;
-} */
 
 /* filter menu */
 #filterAboutMenu {
@@ -113,6 +106,7 @@ nav #logo {
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: var(--color-background);
+  border-bottom: var(--style-border);
 }
 
 #filterMenu {
