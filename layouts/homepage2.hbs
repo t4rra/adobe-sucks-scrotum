@@ -73,11 +73,11 @@
               checked="true"
             /><span>All Pricing</span></label>
           {{#each pricingOptions}}
-            <label for="filter-{{label}}"><input
+            <label for="filter-{{name}}"><input
                 type="radio"
-                id="filter-{{label}}"
+                id="filter-{{name}}"
                 name="secondaryFilter"
-                value="{{label}}"
+                value="{{name}}"
               /><span>{{name}}</span></label>
           {{/each}}
 

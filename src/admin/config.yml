@@ -35,9 +35,16 @@ collections:
             widget: "select"
             options: ["ACR", "AE", "AN", "AU", "DW", "ID", "AI", "LR", "PS", "PR", "SU", "OTHER"]
 
-
       - label: "Pricing"
           widget: "select"
           name: "name"
           widget: "select"
           options: ["Free", "Paid", "FOSS"]
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+
+      - label: "Download Link"
+        name: "downloadLink"
+        widget: "string"
