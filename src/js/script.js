@@ -60,18 +60,29 @@ function update() {
 document.addEventListener("input", update);
 
 // about menu 
+var mainEl = document.querySelector("main");
 var menuEl = document.querySelector("#filterAboutMenu");
+var menuBar = document.querySelector("#links");
 var menuBtn = document.querySelector("#aboutLink");
 var body = document.querySelector("body");
+var positionOffset = 0;
+
+var desktopBreakpoint = window.matchMedia("(min-width: 999px)");
+if (desktopBreakpoint.matches) {
+  var positionOffset = 4;
+}
 
 function getMenuOffset() {
-  offsetBoundingClient = menuBtn.getBoundingClientRect();
+  offsetBoundingClient = menuBar.getBoundingClientRect();
   offset = offsetBoundingClient.bottom;
   return offset;
 }
 
 function setMenuOffset() {
-  menuEl.style.top = getMenuOffset() + 2 + "px";
+  menuEl.style.top = getMenuOffset() + positionOffset + "px";
+  if (desktopBreakpoint.matches) {
+    mainEl.style.top =  getMenuOffset() + positionOffset + "px";
+  }
 }
 
 setMenuOffset();

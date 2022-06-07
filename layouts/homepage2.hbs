@@ -34,32 +34,36 @@
       </div>
     </nav>
 
-      <div id="links">
+    <div id="links">
+      <div class="link">
         <a id="aboutLink" href="#">MENU/FILTER</a>
-        <a href="#">ADD APP</a>
       </div>
+      <div class="link">
+        <a href="https://google.com" target="_blank">ADD APP</a>
+      </div>
+    </div>
 
 
     <header>
       <div id="filterAboutMenu" data-menu="hidden">
         <div id="filterMenu">
-        <form id="appFilter" autocomplete="off">
-          <label for="button-all"><input
-              type="radio"
-              id="button-all"
-              name="mainFilter"
-              value="filterEl"
-              checked="true"
-            /><span>All Apps</span></label>
-          {{#each adobeApps}}
-            <label for="button-{{abbreviation}}"><input
+          <form id="appFilter" autocomplete="off">
+            <label for="button-all"><input
                 type="radio"
-                id="button-{{abbreviation}}"
+                id="button-all"
                 name="mainFilter"
-                value="{{abbreviation}}"
-              /><span>{{name}}</span></label>
-          {{/each}}
-        </form>
+                value="filterEl"
+                checked="true"
+              /><span>All Apps</span></label>
+            {{#each adobeApps}}
+              <label for="button-{{abbreviation}}"><input
+                  type="radio"
+                  id="button-{{abbreviation}}"
+                  name="mainFilter"
+                  value="{{abbreviation}}"
+                /><span>{{name}}</span></label>
+            {{/each}}
+          </form>
         <form id="priceFilter" autocomplete="off">
           <label for="filter-all"><input
               type="radio"
@@ -109,8 +113,16 @@
           <div data-visible="" class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{label}} {{/each}}">
             <h2>{{ title }}</h2>
             <div class="tags">
-              <h5>{{#each replaces}}{{name}}, {{/each}}</h5>
-              <h5>{{#each pricing}}{{name}}, {{/each}}</h5>
+              <div class="replaces">
+                {{#each replaces}}
+                  <h5>{{abbreviation}}</h5>
+                {{/each}}
+              </div>
+              <div class="pricing">
+                {{#each pricing}}
+                  <h5>{{label}}</h5>
+                {{/each}}
+              </div>
             </div>
             <p>{{description}}</p>
               <a

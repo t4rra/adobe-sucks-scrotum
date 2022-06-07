@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: metalsmith-cms
 
 media_folder: "src/uploads"
 public_folder: "../../uploads"
@@ -17,11 +17,30 @@ collections:
         name: "title"
         widget: "string"
         required: true
-        
-      - label: "Description"
-        name: "description"
-        widget: "text"
+
+      - label: "Replaces"
+        name: "replaces"
+        widget: "list"
+        allow_add: true
         required: true
+        fields:
+          - label: Adobe App
+            widget: "object"
+            summary: "{{fields.asfd}}/{{fields.asdf}}"
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "select"
+                options: ["Acrobat", "After Effects", "Animate", "Audition", "Dreamweaver", "InDesign", "Illustrator", "Lightroom", "Photoshop", "Premiere", "Substance", "Other"]
+
+      - label: "External Link"
+        name: "externalLink"
+        widget: "list"
+        allow_add: true
+        required: false
+        fields:
+          - { label: Link URL, name: link, widget: string }
+          - { label: Link Text, name: text, widget: string }
 
       - label: "Page Layout"
         name: "layout"
@@ -52,7 +71,7 @@ collections:
         allow_multiple: false
         choose_url: false
         required: false
-        
+
       - label: "Header Image"
         name: "headerImage"
         widget: "image"
