@@ -7,7 +7,7 @@
 
 [data-visible="invisible"] {
   opacity: 0;
-  display: none;
+  display: none !important;
 }
 
 :root {
@@ -64,14 +64,18 @@ nav #logo {
   margin: 20px;
 }
 
-nav #links {
+#links {
+  position: sticky;
+  top: 0;
   height: 3.5em;
   display: flex;
   justify-content: space-between;
   border-top: var(--style-border);
+  border-bottom: var(--style-border);
+  background-color: var(--color-background);
 }
 
-nav #links a {
+#links a {
   width: 50%;
   font-size: 1.1em;
   text-align: center;
@@ -79,18 +83,11 @@ nav #links a {
   font-family: var(--font-header);
 }
 
-nav #links :first-child {
+#links :first-child {
   border-right: var(--style-border);
 }
 
-#searchBar {
-  position: sticky;
-  top: 0;
-  background-color: var(--color-background);
-}
-
 /* header */
-
 [data-menu="hidden"] {
   height: 0;
   transition-duration: 0.8s;
@@ -98,34 +95,13 @@ nav #links :first-child {
 }
 
 [data-menu="visible"] {
-  height: 80%;
+  height: 85%;
   transition-duration: 0.8s;
-}
-
-#searchBar input {
-  box-sizing: border-box;
-  width: 100%;
-  height: 3.5em;
-  border: none;
-  border-top: var(--style-border);
-  border-bottom: var(--style-border);
-  background: none;
-  color: var(--font-body);
-  padding: 0 10px;
-  transition-duration: 0.2s;
-  font-family: var(--font-body);
-  font-size: 1.2em;
-  text-transform: uppercase;
-}
-
-#searchBar input:focus {
-  outline: none;
-  background-color: var(--color-middle_dark);
-  transition-duration: 0.4s;
 }
 
 /* filter menu */
 #filterAboutMenu {
+  z-index: 69420;
   box-sizing: border-box;
   position: fixed;
   width: 100%;
@@ -228,6 +204,33 @@ label:hover {
 #about section #madeBy {
   text-align: right;
   width: 100%;
+}
+
+/* no results */
+#noResult {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  pointer-events: none;
+  text-align: center;
+}
+
+#noResult h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+#noResult p {
+  font-size: 1.2em;
+}
+
+.hidden {
+  display: none !important;
 }
 
 /* main  */

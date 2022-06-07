@@ -32,15 +32,13 @@
         <h1>ADOBE SUCKS</h1>
         <h6>(SCROTUM)</h6>
       </div>
+    </nav>
+
       <div id="links">
         <a id="aboutLink" href="#">MENU/FILTER</a>
         <a href="#">ADD APP</a>
       </div>
-    </nav>
 
-    <div id="searchBar" class="">
-      <input type="text" placeholder="KRITA, BLENDER, ETC." />
-    </div>
 
     <header>
       <div id="filterAboutMenu" data-menu="hidden">
@@ -101,10 +99,14 @@
         </div>
       </div>
     </header>
+    <div class="hidden" id="noResult">
+      <h2>No results!</h2>
+      <p>Please try a different combination of filters, or if an app you want isn't listed, add it through <a href="#">this</a> form.</p>
+    </div>
     <main>
       {{#if altApps}}
         {{#each altApps}}
-          <div class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{label}} {{/each}}">
+          <div data-visible="" class="filterEl {{#each replaces}}{{abbreviation}} {{/each}}{{#each pricing}}{{label}} {{/each}}">
             <h2>{{ title }}</h2>
             <div class="tags">
               <h5>{{#each replaces}}{{name}}, {{/each}}</h5>

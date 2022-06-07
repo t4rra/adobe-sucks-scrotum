@@ -3,15 +3,11 @@ title: ALTERNATE APP 2
 replaces:
   - name: After Effects
     abbreviation: AE
-  - name: Photoshop
-    abbreviation: PS
-  - name: Illustrator
-    abbreviation: AI
+  - name: Animate
+    abbreviation: AN
 pricing:
   - name: Free
     label: free
-  - name: Open Source
-    label: foss
-description: Brief description of why you should get this app. Lorem ipsum blah blah blah something ok bye.
+description: Animation app that does a thing.
 downloadLink: https://example.com
 ---

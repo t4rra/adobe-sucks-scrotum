@@ -48,57 +48,17 @@ function update() {
   }
 
   // checks if any element's data-visible attribute is visible
-  // if (document.querySelectorAll("[data-visible='visible']").length > 0) {
-  //   console.log("there is a result");
-  //   document.getElementById("noResult").classList.add("hidden");
-  // } else {
-  //   console.log("there is no results");
-  //   document.getElementById("noResult").classList.remove("hidden");
-  // }
+  if (document.querySelectorAll("[data-visible='visible']").length > 0) {
+    console.log("there is a result");
+    document.getElementById("noResult").classList.add("hidden");
+  } else {
+    console.log("there is no results");
+    document.getElementById("noResult").classList.remove("hidden");
+  }
   console.log(selectedApp);
 }
 
-// runs the function every time an input is detected
 document.addEventListener("input", update);
-
-// About popup
-//   var modal = document.getElementById("about");
-
-//   var btn = document.getElementById("openAbout");
-
-//   var closebtn = document.getElementById("closeAbout");
-
-//   function openModal() {
-// 	modal.style.opacity = "1";
-// 	modal.style.pointerEvents = "all";
-// 	setTimeout(() => {
-// 	  document.querySelector("body").style.overflow = "hidden";
-// 	}, 400);
-//   }
-
-//   function closeModal() {
-// 	modal.style.opacity = "0";
-// 	modal.style.pointerEvents = "none";
-// 	document.querySelector("body").style.overflow = "auto";
-// 	setTimeout(() => {
-// 	  document.querySelector("main").style.zIndex = "0";
-// 	}, 400);
-//   }
-
-//   btn.onclick = function () {
-// 	openModal();
-// 	document.querySelector("main").style.zIndex = "-100";
-//   };
-
-//   closebtn.onclick = function () {
-// 	closeModal();
-//   };
-
-//   window.onclick = function (event) {
-// 	if (event.target == modal) {
-// 	  closeModal();
-// 	}
-//   };
 
 menuEl = document.querySelector("#filterAboutMenu");
 body = document.querySelector("body");
