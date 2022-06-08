@@ -131,30 +131,48 @@ if (body.id == "home") {
 
 // form link generation
 if (body.id == "submit") {
-  function getSelectedOptions(select) {
-    var sdValues = [];
-    for (var i = 0; i < select.options.length; i++) {
-      if (select.options[i].selected == true) {
-        sdValues.push(select.options[i].value);
+  function getCheckedBoxes(chkboxName) {
+    var checkboxes = document.getElementsByName(chkboxName);
+    var checkboxesChecked = [];
+    // loop over them all
+    for (var i = 0; i < checkboxes.length; i++) {
+      // And stick the checked ones onto an array...
+      if (checkboxes[i].checked) {
+        checkboxesChecked.push(checkboxes[i].value);
       }
     }
-    return sdValues.join("  %0D%0A - ");
-  }
+    // Return the array if it is non-empty, or null
+    return checkboxesChecked.join("  %0D%0A - ");
 
+    // return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+  }
   document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
 
     const title = document.querySelector("[name='altApp']").value;
-    const replaces = document.querySelector("[name='replaces']");
-    const pricing = document.querySelector("[name='pricing']");
+    const replaces = "adobeApps";
+    const pricing = "pricing";
     const description = document.querySelector("[name='description']").value;
     const link = document.querySelector("[name='link']").value;
 
-    console.log(title);
-    console.log(getSelectedOptions(replaces));
-    console.log(getSelectedOptions(pricing));
-    console.log(description);
-    const issueLink = "https://github.com/eaaasun/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative:" + title + "&additional-comments=---%0D%0Atitle: " + title + "%0D%0Adescription: " + description + "%0D%0Apricing:%0D%0A - " + getSelectedOptions(pricing) + "%0D%0Areplaces:%0D%0A - " + getSelectedOptions(replaces) + "%0D%0Alink: " + link + "%0D%0A---%0D%0A"
+    // replace all break lines with space
+    const formatted_description = description.replace(/\n/g, " ");
+
+    const issueLink =
+      "https://github.com/eaaasun/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative: " +
+      title +
+      "&additional-comments=---%0D%0Atitle: " +
+      title +
+      "%0D%0Adescription: " +
+      formatted_description +
+      "%0D%0Apricing:%0D%0A - " +
+      getCheckedBoxes(pricing) +
+      "%0D%0Areplaces:%0D%0A - " +
+      getCheckedBoxes(replaces) +
+      "%0D%0Alink: " +
+      link +
+      "%0D%0A---%0D%0A";
+
     window.open(issueLink, "_blank");
   });
 }

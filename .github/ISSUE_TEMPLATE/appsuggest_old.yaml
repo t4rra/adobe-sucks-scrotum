@@ -1,0 +1,76 @@
+name: Suggest Alternative
+description: Suggest an alternative app to an Adobe app.
+title: "Alternative: [Adobe App] - [Alternative]"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        -- Alternative submissions are not being processed currently! --<br>
+        I'm redesigning the website to be faster/easier to work with on both my end and the visitor's end. Thanks for being patient! (Submissions are still welcome) <br>
+        Thanks for taking the time to fill out this form!<br>
+        Please replace text on the title in [brackets] with appropriate content.<br>
+        Check the [website](https://ass.esoda.ga) and [issues](https://github.com/E-Soda/adobe-sucks-scrotum/issues) to see if your specific Adobe app and alternative is listed. Feel free to submit an issue if your alternative app is not listed or under a different Adobe app than the one you have in mind.<br>
+        Note: only apps with a free or one-time payment models are wanted.
+  - type: input
+    id: adobe-app-name
+    attributes:
+      label: Adobe App
+      description: Which Adobe app do you intend to replace? (Include multiple if nessessary)
+      placeholder: Photoshop, After Effects, etc.
+    validations:
+      required: true
+      
+  - type: input
+    id: alt-app-name
+    attributes:
+      label: Alternative App
+      description: Which app do you want to replace the Adobe app(s) with? (One only)
+      placeholder: Krita, Blender, etc.
+    validations:
+      required: true
+  
+  - type: input
+    id: alt-app-link
+    attributes:
+      label: Alternative App Link
+      description: What is the official website of the alternative app?
+      placeholder: https://krita.org/, https://www.blender.org/, etc.
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: alt-app-pricing
+    attributes:
+      label: Alternative App Pricing
+      description: Do you need to pay? (You can select more than one if the alternative app has multiple pricing options)
+      multiple: true
+      options:
+        - Free
+        - One-time payment
+    validations:
+      required: true
+  - type: dropdown
+    id: open-source
+    attributes:
+      label: Open Source
+      description: Is it open source?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+      description: Why is this a viable alternative? (Optional, but really helps in speeding things along)
+      placeholder: Krita is FOSS (free and open source software), more drawing-friendly, and has superior animation tools.
+
+  - type: textarea
+    id: additional-comments
+    attributes:
+      label: Additional Comments
+      description: Anything else to say?
+      placeholder: I really enjoy lemon-flavored lasagna.

@@ -124,7 +124,9 @@
                 {{/each}}
               </div>
             </div>
-            <p>{{description}}</p>
+            {{#if description}}
+              <p>{{ description }}</p>
+            {{/if}}
               <a
                 href="{{ downloadLink }}"
                 target="_blank"
