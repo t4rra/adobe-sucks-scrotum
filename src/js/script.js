@@ -17,48 +17,50 @@ function selectAll(elements) {
 }
 
 // thanks https://photics.com/hero-1-help-my-map-does-not-work/
-function update() {
-  var selectedApp = document.querySelector(
-    "input[name='mainFilter']:checked"
-  ).id;
-  var selectedAppClass = document.querySelector(
-    "input[name='mainFilter']:checked"
-  ).value;
+if (document.querySelector("body").id == "home") {
+  function update() {
+    var selectedApp = document.querySelector(
+      "input[name='mainFilter']:checked"
+    ).id;
+    var selectedAppClass = document.querySelector(
+      "input[name='mainFilter']:checked"
+    ).value;
 
-  var selectedFilter = document.querySelector(
-    "input[name='secondaryFilter']:checked"
-  ).id;
-  var selectedFilterClass = document.querySelector(
-    "input[name='secondaryFilter']:checked"
-  ).value;
+    var selectedFilter = document.querySelector(
+      "input[name='secondaryFilter']:checked"
+    ).id;
+    var selectedFilterClass = document.querySelector(
+      "input[name='secondaryFilter']:checked"
+    ).value;
 
-  hideElements(document.getElementsByClassName("filterEl"));
+    hideElements(document.getElementsByClassName("filterEl"));
 
-  // shows elements filtered by app and price
-  if (document.getElementById(selectedApp).checked) {
-    if (document.getElementById(selectedFilter).checked) {
-      showElements(
-        document.querySelectorAll(
-          "." + selectedAppClass + "." + selectedFilterClass
-        )
-      );
+    // shows elements filtered by app and price
+    if (document.getElementById(selectedApp).checked) {
+      if (document.getElementById(selectedFilter).checked) {
+        showElements(
+          document.querySelectorAll(
+            "." + selectedAppClass + "." + selectedFilterClass
+          )
+        );
+      }
+    } else {
+      hideElements(document.getElementsByClassName(selectedAppClass));
     }
-  } else {
-    hideElements(document.getElementsByClassName(selectedAppClass));
+
+    // checks if any element's data-visible attribute is visible
+    if (document.querySelectorAll("[data-visible='visible']").length > 0) {
+      document.getElementById("noResult").classList.add("hidden");
+      document.getElementById("noResult").style.pointerEvents("auto");
+    } else {
+      document.getElementById("noResult").classList.remove("hidden");
+      document.getElementById("noResult").style.pointerEvents("none");
+    }
+    console.log(selectedApp);
   }
 
-  // checks if any element's data-visible attribute is visible
-  if (document.querySelectorAll("[data-visible='visible']").length > 0) {
-    document.getElementById("noResult").classList.add("hidden");
-    document.getElementById("noResult").style.pointerEvents("auto");
-  } else {
-    document.getElementById("noResult").classList.remove("hidden");
-    document.getElementById("noResult").style.pointerEvents("none");
-  }
-  console.log(selectedApp);
+  document.addEventListener("input", update);
 }
-
-document.addEventListener("input", update);
 // about menu
 
 var mainEl = document.querySelector("main");
@@ -124,5 +126,35 @@ if (body.id == "home") {
   menuBtn.addEventListener("click", function (event) {
     event.preventDefault();
     menuToggle();
+  });
+}
+
+// form link generation
+if (body.id == "submit") {
+  function getSelectedOptions(select) {
+    var sdValues = [];
+    for (var i = 0; i < select.options.length; i++) {
+      if (select.options[i].selected == true) {
+        sdValues.push(select.options[i].value);
+      }
+    }
+    return sdValues.join("  %0D%0A - ");
+  }
+
+  document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const title = document.querySelector("[name='altApp']").value;
+    const replaces = document.querySelector("[name='replaces']");
+    const pricing = document.querySelector("[name='pricing']");
+    const description = document.querySelector("[name='description']").value;
+    const link = document.querySelector("[name='link']").value;
+
+    console.log(title);
+    console.log(getSelectedOptions(replaces));
+    console.log(getSelectedOptions(pricing));
+    console.log(description);
+    const issueLink = "https://github.com/eaaasun/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative:" + title + "&additional-comments=---%0D%0Atitle: " + title + "%0D%0Adescription: " + description + "%0D%0Apricing:%0D%0A - " + getSelectedOptions(pricing) + "%0D%0Areplaces:%0D%0A - " + getSelectedOptions(replaces) + "%0D%0Alink: " + link + "%0D%0A---%0D%0A"
+    window.open(issueLink, "_blank");
   });
 }
