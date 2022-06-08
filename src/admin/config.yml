@@ -20,31 +20,15 @@ collections:
 
       - label: "Replaces"
         name: "adobeApps"
-        widget: "list"
-        allow_add: true
-        required: true
-        fields:
-          - label: "Adobe App Name"
-            widget: "select"
-            name: "name"
-            options: ["Acrobat", "After Effects", "Animate", "Audition", "Dreamweaver", "InDesign", "Illustrator", "Lightroom", "Photoshop", "Premiere", "Substance", "Other"]
-          - label: "Adobe App Abbreviation"
-            name: "abbreviation"
-            widget: "select"
-            options: ["ACR", "AE", "AN", "AU", "DW", "ID", "AI", "LR", "PS", "PR", "SU", "OTHER"]
+        multiple: true
+        widget: "select"
+        options: ["ACR", "AE", "AN", "AU", "DW", "ID", "AI", "LR", "PS", "PR", "SU", "OTHER"]
 
       - label: "Pricing"
-        name: "pricingOptions"
-        widget: "list"
-        max: 3
-        min: 1
-        allow_add: true
-        required: true
-        fields:
-          - label: "Pricing"
-            widget: "select"
-            name: "price"
-            options: ["free", "paid", "foss"]
+        name: "pricing"
+        multiple: true
+        widget: "select"
+        options: ["free", "paid", "foss"]
 
       - label: "Description"
         name: "description"

@@ -59,6 +59,12 @@ p {
   font-style: normal;
 }
 
+p a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight);
+  text-decoration-thickness: 3px;
+}
+
 a {
   color: var(--color-foreground);
   text-decoration: none;
@@ -70,6 +76,7 @@ nav #logo {
 }
 
 #links {
+  z-index: 69419;
   position: sticky;
   width: 100%;
   top: 0;
@@ -134,7 +141,7 @@ nav #logo {
 
 /* Thanks https://codepen.io/SitePoint/pen/VwNWJa */
 
-[type="radio"] {
+#home [type="radio"] {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -146,7 +153,7 @@ nav #logo {
 }
 
 /* One radio button per line */
-label {
+#home label {
   background-color: var(--color-background);
   border-radius: 100vh;
   margin: 6px 12px 6px 6px;
@@ -158,12 +165,12 @@ label {
   transition-duration: 0.4s;
 }
 
-label:hover {
+#home label:hover {
   background-color: var(--color-middle_dark);
   transition-duration: 0.4s;
 }
 
-[type="radio"] + span {
+#home [type="radio"] + span {
   font-family: var(--font-header);
   padding-top: 2px;
   font-size: 2.25em;
@@ -172,7 +179,7 @@ label:hover {
 }
 
 /* the basic, unchecked style */
-[type="radio"] + span:before {
+#home [type="radio"] + span:before {
   background-color: var(--color-foreground);
   content: "";
   display: inline-block;
@@ -185,7 +192,7 @@ label:hover {
 }
 
 /* the checked style using the :checked pseudo class */
-[type="radio"]:checked + span:before {
+#home [type="radio"]:checked + span:before {
   background: var(--color-highlight);
 }
 
@@ -222,7 +229,6 @@ label:hover {
   align-items: center;
   flex-direction: column;
   padding: 15px;
-  pointer-events: none;
   text-align: center;
 }
 
@@ -240,7 +246,7 @@ label:hover {
 }
 
 /* main  */
-main {
+#home main {
   display: flex;
   padding: 15px;
   flex-direction: column;
@@ -252,6 +258,7 @@ main {
   border: var(--style-border);
   border-radius: 10px;
   width: 100%;
+  margin-bottom: 25px;
 }
 
 .filterEl h2 {
@@ -312,6 +319,26 @@ main {
   transition-duration: 0.4s;
 }
 
+/* tablet breakpoint */
+@media screen and (min-width: 650px) {
+  :root {
+    --style-border: 5px solid var(--color-middle_light);
+  }
+
+  #home main {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    margin: 0 5vw;
+    grid-gap: 30px;
+  }
+
+  #home [type="radio"] + span {
+    font-size: 1.2em;
+  }
+}
+
 /* desktop breakpoint */
 @media screen and (min-width: 999px) {
   :root {
@@ -340,7 +367,6 @@ main {
   }
 
   #links {
-    z-index: 69419;
     height: 6em;
     width: min-content;
     position: fixed;
@@ -364,6 +390,10 @@ main {
     padding: 0 30px;
     vertical-align: middle;
     border: none;
+  }
+
+  #home [type="radio"] + span {
+    font-size: 2.25vh;
   }
 
   #filterAboutMenu {
@@ -397,7 +427,7 @@ main {
   }
 
   #about {
-    height: 90%;
+    height: 93%;
     max-width: 50%;
     margin: 0 50px;
     margin-left: 25px;
@@ -428,17 +458,17 @@ main {
     width: 100%;
   }
 
-  #noResult p, #noResult h2 {
+  #noResult p,
+  #noResult h2 {
     width: 30%;
   }
 
-  main {
+  #home main {
     display: grid;
     position: relative;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    width: 70%;
-    margin: 0 auto;
+    grid-template-rows: repeat(auto, 1fr);
+    margin: 0 5vw;
     grid-gap: 30px;
   }
 
@@ -446,6 +476,7 @@ main {
     display: flex;
     flex-direction: column;
     height: 100%;
+    margin: 0;
   }
 
   .filterEl h2 {
@@ -456,4 +487,15 @@ main {
     font-size: 1.15em;
     flex-grow: 1;
   }
+}
+
+
+
+
+
+
+
+
+#submit main {
+  position: relative;
 }

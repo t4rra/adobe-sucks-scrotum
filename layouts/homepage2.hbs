@@ -26,7 +26,7 @@
     ></script>
   </head>
 
-  <body>
+  <body id="home">
     <nav>
       <div id="logo">
         <h1>ADOBE SUCKS</h1>
@@ -39,7 +39,7 @@
         <a id="aboutLink" href="#">MENU/FILTER</a>
       </div>
       <div class="link">
-        <a href="https://google.com" target="_blank">ADD APP</a>
+        <a href="./submit.html">ADD APP</a>
       </div>
     </div>
 
@@ -56,12 +56,12 @@
                 checked="true"
               /><span>All Apps</span></label>
             {{#each adobeApps}}
-              <label for="button-{{abbreviation}}"><input
+              <label for="button-{{this}}"><input
                   type="radio"
-                  id="button-{{abbreviation}}"
+                  id="button-{{this}}"
                   name="mainFilter"
-                  value="{{abbreviation}}"
-                /><span>{{name}}</span></label>
+                  value="{{this}}"
+                /><span>{{this}}</span></label>
             {{/each}}
           </form>
         <form id="priceFilter" autocomplete="off">
@@ -72,13 +72,13 @@
               value="filterEl"
               checked="true"
             /><span>All Pricing</span></label>
-          {{#each pricingOptions}}
-            <label for="filter-{{price}}"><input
+          {{#each pricing}}
+            <label for="filter-{{this}}"><input
                 type="radio"
-                id="filter-{{price}}"
+                id="filter-{{this}}"
                 name="secondaryFilter"
-                value="{{price}}"
-              /><span>{{price}}</span></label>
+                value="{{this}}"
+              /><span>{{this}}</span></label>
           {{/each}}
 
         </form>
@@ -110,17 +110,17 @@
     <main>
       {{#if altApps}}
         {{#each altApps}}
-          <div data-visible="" class="filterEl {{#each adobeApps}}{{abbreviation}} {{/each}}{{#each pricing}}{{name}} {{/each}}">
+          <div data-visible="" class="filterEl {{#each adobeApps}}{{this}} {{/each}}{{#each pricing}}{{this}} {{/each}}">
             <h2>{{ title }}</h2>
             <div class="tags">
               <div class="replaces">
                 {{#each adobeApps}}
-                  <h5>{{abbreviation}}</h5>
+                  <h5>{{this}}</h5>
                 {{/each}}
               </div>
               <div class="pricing">
-                {{#each pricingOptions}}
-                  <h5>{{price}}</h5>
+                {{#each pricing}}
+                  <h5>{{this}}</h5>
                 {{/each}}
               </div>
             </div>
