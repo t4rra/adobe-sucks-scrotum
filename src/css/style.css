@@ -500,4 +500,28 @@ nav #logo {
   position: relative;
 }
 
-#submit form {}
+#submit form {
+  width: 100%;
+  height: 100%; 
+}
+
+#submit input {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  height: 3em;
+  font-size: 2em;
+  font-family: var(--font-body);
+  border-bottom: var(--style-border);
+  padding: 10px;
+  transition-duration: 0.4s;
+}
+
+#submit [name="altApp"] {
+  width: 100%;
+}
+
+#submit [name="altApp"]:focus {
+  outline: none;
+  background-color: var(--color-middle_dark);
+  transition-duration: 0.4s;
+}
