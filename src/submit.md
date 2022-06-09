@@ -14,9 +14,10 @@ adobeApps:
   - PS
   - PR
   - SUB
+  - XD
   - OTHER
 pricing:
+  - foss
   - free
   - paid
-  - foss
 ---

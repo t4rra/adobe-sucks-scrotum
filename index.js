@@ -16,7 +16,7 @@ Metalsmith(__dirname)
   .use(
     collections({
       altApps: "altApps/*.md",
-      config: "index.md",
+      config: "*.md",
     })
   )
   .use(markdown())

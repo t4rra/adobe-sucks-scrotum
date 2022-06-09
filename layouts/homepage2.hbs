@@ -56,14 +56,13 @@
                 checked="true"
               /><span>All Apps</span></label>
             {{#each adobeApps}}
-              <label for="button-{{this}}"><input
-                  type="radio"
-                  id="button-{{this}}"
-                  name="mainFilter"
-                  value="{{this}}"
-                /><span>{{this}}</span></label>
+              <label for="button-{{this}}">
+                <input type="radio" id="button-{{this}}" name="mainFilter" value="{{this}}"/>
+                <span>{{this}}</span>
+              </label>
             {{/each}}
           </form>
+          <div class="verticalLine"></div>
         <form id="priceFilter" autocomplete="off">
           <label for="filter-all"><input
               type="radio"
@@ -83,6 +82,7 @@
 
         </form>
         </div>
+        <div class="verticalLine"></div>
         <div id="about">
           <section>
             <h1>ADOBE SUCKS.</h1>

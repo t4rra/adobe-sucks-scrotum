@@ -143,17 +143,41 @@ if (body.id == "submit") {
     }
     // Return the array if it is non-empty, or null
     return checkboxesChecked.join("  %0D%0A - ");
-
-    // return checkboxesChecked.length > 0 ? checkboxesChecked : null;
   }
+
+  const title = document.querySelector("[name='altApp']").value;
+  const replaces = "adobeApps";
+  const pricing = "pricing";
+  const description = document.querySelector("[name='description']").value;
+  const link = document.querySelector("[name='link']").value;
+
+  const submitBtn = document.querySelector("[type='submit']");
+  
+  function validateForm() {
+    if (
+      !(title == "" ||
+      description == "" ||
+      link == "" ||
+      getCheckedBoxes(pricing) == "" ||
+      getCheckedBoxes(replaces) == "")
+    ) {
+      submitBtn.value = "submit";
+      // submitBtn.style.cursor = "pointer";
+      return true;
+    } else {
+      submitBtn.value = "fill all fields";
+      submitBtn.style.cursor = "not-allowed !important";
+      return false;
+    }
+  }
+  validateForm();
+
+  document.querySelector("form").addEventListener("input", function () {
+    validateForm();
+  });
+
   document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const title = document.querySelector("[name='altApp']").value;
-    const replaces = "adobeApps";
-    const pricing = "pricing";
-    const description = document.querySelector("[name='description']").value;
-    const link = document.querySelector("[name='link']").value;
 
     // replace all break lines with space
     const formatted_description = description.replace(/\n/g, " ");
@@ -173,6 +197,10 @@ if (body.id == "submit") {
       link +
       "%0D%0A---%0D%0A";
 
-    window.open(issueLink, "_blank");
+    if (validateForm() == true) {
+      window.open(issueLink, "_blank");
+    } else {
+      console.log("cannot submit");
+    }
   });
 }

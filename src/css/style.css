@@ -1,9 +1,10 @@
-@import url(https://fonts.googleapis.com/css2?family=Bodoni+Moda);
+@import url(https://fonts.googleapis.com/css2?family=PT+Mono);
 
 * {
   margin: 0;
   padding: 0;
   scrollbar-width: thin;
+  box-sizing: border-box;
 }
 
 [data-visible="invisible"] {
@@ -132,12 +133,15 @@ nav #logo {
 }
 
 #filterMenu form {
-  min-height: 105%;
   width: 50%;
+  height: min-content;
   padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-#filterMenu form:first-child {
+#filterMenu #appFilter {
   border-right: var(--style-border);
 }
 
@@ -154,48 +158,36 @@ nav #logo {
   width: 1px;
 }
 
-/* One radio button per line */
-#home label {
-  background-color: var(--color-background);
-  border-radius: 100vh;
-  margin: 6px 12px 6px 6px;
-  padding: 0 15px;
-  display: block;
-  cursor: pointer;
-  line-height: 2.5;
-  font-size: 1.5vw;
-  transition-duration: 0.4s;
-}
-
-#home label:hover {
-  background-color: var(--color-middle_dark);
-  transition-duration: 0.4s;
-}
-
 #home [type="radio"] + span {
-  font-family: var(--font-header);
-  padding-top: 2px;
-  font-size: 2.25em;
+  font-family: var(--font-body);
+  color: var(--color-middle_light);
+  border: var(--style-border);
+  border-radius: var(--style-border-highlight-radius);
+  width: min-content;
+  white-space: nowrap;
+  padding: 6px 12px;
+  margin: 15px;
+  font-size: 4vw;
   display: block;
   text-transform: uppercase;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-/* the basic, unchecked style */
-#home [type="radio"] + span:before {
-  background-color: var(--color-foreground);
-  content: "";
-  display: inline-block;
-  width: 0.5em;
-  height: 0.5em;
-  vertical-align: 0.07em;
-  border-radius: 1em;
-  margin-right: 0.75em;
+#home [type="radio"] + span:hover {
+  background-color: var(--color-middle_dark);
+  color: var(--color-foreground);
   transition-duration: 0.2s;
 }
 
-/* the checked style using the :checked pseudo class */
-#home [type="radio"]:checked + span:before {
-  background: var(--color-highlight);
+#home [type="radio"]:checked + span {
+  border: var(--style-border-highlight);
+  color: var(--color-foreground);
+}
+
+#home [type="radio"]:checked + span:hover {
+  background-color: var(--color-background);
+  cursor: default;
 }
 
 /* about section */
@@ -321,6 +313,10 @@ nav #logo {
   transition-duration: 0.4s;
 }
 
+.verticalLine {
+  display: none;
+}
+
 /* tablet breakpoint */
 @media screen and (min-width: 650px) {
   :root {
@@ -347,6 +343,11 @@ nav #logo {
     --style-border: 5px solid var(--color-middle_light);
   }
 
+  .verticalLine {
+    height: 100%;
+    border-left: var(--style-border);
+  }
+  
   nav {
     padding: 20px;
     width: 100%;
@@ -411,19 +412,11 @@ nav #logo {
   }
 
   #filterMenu form {
-    min-height: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 0 25px;
   }
-
-  #filterMenu form:first-of-type {
-    border: none;
-  }
-
-  #filterMenu form:last-of-type {
-    border-left: var(--style-border);
-    border-right: var(--style-border);
-  }
-
+  
   label {
     font-size: 0.5vw;
   }
@@ -491,23 +484,17 @@ nav #logo {
   }
 }
 
-
-
-
-
-
-
-
 #submit main {
   position: relative;
 }
 
 #submit form {
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 
-#submit input, #submit textarea {
+#submit input,
+#submit textarea {
   resize: none;
   width: 100%;
   text-transform: uppercase;
@@ -521,7 +508,8 @@ nav #logo {
   transition-duration: 0.4s;
 }
 
-#submit input:focus, #submit textarea:focus {
+#submit input:focus,
+#submit textarea:focus {
   outline: none;
   background-color: var(--color-middle_dark);
   transition-duration: 0.4s;
@@ -542,7 +530,7 @@ nav #logo {
   border-top: var(--style-border);
 }
 
-#submit input[type=checkbox]:checked + label {
+#submit input[type="checkbox"]:checked + label {
   border-color: var(--color-highlight);
   color: var(--color-foreground);
   transition-duration: 0.2s;
@@ -559,7 +547,7 @@ nav #logo {
   color: var(--color-middle_light);
   user-select: none;
   transition-duration: 0.2s;
-  margin: 10px;
+  margin: 5px;
 }
 
 #submit label:hover {
@@ -568,12 +556,12 @@ nav #logo {
   color: var(--color-foreground);
 }
 
-#submit input[type=checkbox] {
+#submit input[type="checkbox"] {
   display: none;
 }
 
 #submit .checkboxContainer {
-  margin: 15px 0;
+  margin: 10px 5px;
 }
 
 #submit .checkboxContainer#pricingChkboxContainer {
@@ -597,6 +585,7 @@ nav #logo {
 #submit input[type="submit"] {
   border-bottom: var(--style-border);
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 #submit input[type="submit"]:hover {
