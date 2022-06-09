@@ -25,7 +25,6 @@ Metalsmith(__dirname)
   .use(
     metadata({
       config: {
-        // titles: { title1: "config", title2: "config2" },
         adobeApps: [
           "ACROBAT",
           "AE",

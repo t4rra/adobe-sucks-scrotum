@@ -292,10 +292,10 @@ nav #logo {
 .filterEl p {
   padding: 15px;
   font-size: 1em;
+  border-bottom: var(--style-border);
 }
 
 .filterEl a {
-  border-top: var(--style-border);
   padding: 15px 0;
   font-family: var(--font-header);
   font-size: 1.1em;

@@ -43,7 +43,7 @@
         <div id="altAppContainer">
           <input
             type="text"
-            placeholder="App Name"
+            placeholder="App Name*"
             name="altApp"
             maxlength="50"
             required
@@ -52,7 +52,7 @@
         <div id="leftRightContainer">
           <div id="leftContainer">
             <div id="pricingContainer">
-              <h2 id="pricing">Pricing (select multiple if needed)</h2>
+              <h2 id="pricing">Pricing* (select ≥ 1)</h2>
               <div class="checkboxContainer" id="pricingChkboxContainer">
                 {{#each pricing}}
                   <input
@@ -71,14 +71,13 @@
               <textarea
                 name="description"
                 maxlength="220"
-                placeholder="Description..."
-                required
+                placeholder="Why should someone use this app? (optional but recommended)"
               ></textarea>
             </div>
           </div>
           <div id="rightContainer">
             <div id="replacesContainer">
-              <h2>replaces (select multiple if needed)</h2>
+              <h2>replaces* (select ≥ 1)</h2>
               <div class="checkboxContainer">
                 {{#each adobeApps}}
                   <input
@@ -95,10 +94,10 @@
 
             <div id="linkSubmit">
               <div id="linkContainer">
-                <input type="url" name="link" placeholder="Website Link" required />
+                <input type="url" name="link" placeholder="Website Link*" required />
               </div>
               <div id="submitContainer">
-                <input type="submit" value="fill all fields" />
+                <input type="submit" value="fill required fields" />
               </div>
             </div>
           </div>

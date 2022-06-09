@@ -161,7 +161,6 @@ if (body.id == "submit") {
     
     if (
       !(title == "" ||
-      description == "" ||
       link == "" ||
       getCheckedBoxes(pricing) == "" ||
       getCheckedBoxes(replaces) == "")
@@ -169,13 +168,11 @@ if (body.id == "submit") {
       submitContainer.style.cursor = "pointer";
       submitBtn.style.pointerEvents = "auto";
       submitBtn.value = "submit";
-      console.log("valid");
       return true;
     } else {
       submitContainer.style.cursor = "not-allowed !important";
       submitBtn.style.pointerEvents = "none";
-      submitBtn.value = "fill all fields";
-      console.log("invalid");
+      submitBtn.value = "fill required fields";
       return false;
     }
   }
@@ -200,7 +197,7 @@ if (body.id == "submit") {
       formatted_description +
       "%0D%0Apricing:%0D%0A - " +
       getCheckedBoxes(pricing) +
-      "%0D%0Areplaces:%0D%0A - " +
+      "%0D%0AadobeApps:%0D%0A - " +
       getCheckedBoxes(replaces) +
       "%0D%0Alink: " +
       link +
