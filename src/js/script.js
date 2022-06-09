@@ -151,8 +151,9 @@ if (body.id == "submit") {
   const description = document.querySelector("[name='description']").value;
   const link = document.querySelector("[name='link']").value;
 
+  const submitContainer = document.querySelector("#submitContainer");
   const submitBtn = document.querySelector("[type='submit']");
-  
+
   function validateForm() {
     if (
       !(title == "" ||
@@ -161,12 +162,13 @@ if (body.id == "submit") {
       getCheckedBoxes(pricing) == "" ||
       getCheckedBoxes(replaces) == "")
     ) {
+      submitBtn.style.cursor = "pointer";
       submitBtn.value = "submit";
-      // submitBtn.style.cursor = "pointer";
       return true;
     } else {
+      submitContainer.style.cursor = "not-allowed";
+      submitBtn.style.pointerEvents = "none";
       submitBtn.value = "fill all fields";
-      submitBtn.style.cursor = "not-allowed !important";
       return false;
     }
   }
