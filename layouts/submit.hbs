@@ -37,9 +37,10 @@
         <a href="#" style="pointer-events: none;">ADD APP</a>
       </div>
     </div>
+
     <main>
-      <form >
-        <div>
+      <form>
+        <div id="altAppContainer">
           <input
             type="text"
             placeholder="App Name"
@@ -48,24 +49,9 @@
             required
           />
         </div>
-        <div>
-          <h2>Replaces</h2>
-          <div class="checkboxContainer">
-            {{#each adobeApps}}
-              <input
-                id="{{this}}"
-                type="checkbox"
-                class="required_group1"
-                name="adobeApps"
-                value="{{this}}"
-              />
-              <label for="{{this}}">{{this}}</label>
-            {{/each}}
-          </div>
-        </div>
-        <div>
-          <h2 id="pricing">Pricing</h2>
 
+        <div id="pricingContainer">
+          <h2 id="pricing">Pricing</h2>
           <div class="checkboxContainer" id="pricingChkboxContainer">
             {{#each pricing}}
               <input
@@ -79,7 +65,24 @@
             {{/each}}
           </div>
         </div>
-        <div>
+
+        <div id="replacesContainer">
+          <h2>replaces</h2>
+          <div class="checkboxContainer">
+            {{#each adobeApps}}
+              <input
+                id="{{this}}"
+                type="checkbox"
+                class="required_group1"
+                name="adobeApps"
+                value="{{this}}"
+              />
+              <label for="{{this}}">{{this}}</label>
+            {{/each}}
+          </div>
+        </div>
+
+        <div id="descriptionContainer">
           <textarea
             name="description"
             maxlength="220"
@@ -87,13 +90,15 @@
             required
           ></textarea>
         </div>
-        <div>
-          <input type="url" name="link" placeholder="Download Link" required />
+
+        <div id="linkSubmit">
+          <div id="linkContainer">
+            <input type="url" name="link" placeholder="Download Link" required />
+          </div>
+          <div id="submitContainer">
+            <input type="submit" value="fill all fields" />
+          </div>
         </div>
-        <div id="submitContainer">
-          <input type="submit" value="fill all fields"/>
-        </div>
-      </form>
     </main>
     <script src="./js/script.js"></script>
   </body>

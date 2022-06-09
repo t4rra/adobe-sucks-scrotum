@@ -1,23 +1,5 @@
 ---
-title: EASUN
-description: Easun's little corner of the internet.
+title: ADOBE SUCKS (SCROTUM) - Add App Form
+description: Add your Adobe alternative to this website!
 layout: submit.hbs
-adobeApps:
-  - ACROBAT
-  - AE
-  - AN
-  - AU
-  - DW
-  - ID
-  - AI
-  - LR
-  - PS
-  - PR
-  - SUB
-  - XD
-  - OTHER
-pricing:
-  - foss
-  - free
-  - paid
 ---

@@ -102,7 +102,7 @@ if (body.id == "home") {
   function animateMenu(direction) {
     anime({
       targets: "#filterAboutMenu",
-      height: [0, "calc(100% - " + getMenuOffset() + "px)"],
+      height: [0, "calc(100vh - " + getMenuOffset() + "px)"],
       duration: 800,
       easing: "easeInOutExpo",
       direction: direction,
@@ -145,16 +145,20 @@ if (body.id == "submit") {
     return checkboxesChecked.join("  %0D%0A - ");
   }
 
-  const title = document.querySelector("[name='altApp']").value;
-  const replaces = "adobeApps";
-  const pricing = "pricing";
-  const description = document.querySelector("[name='description']").value;
-  const link = document.querySelector("[name='link']").value;
+  function setVars() {
+  window.title = document.querySelector("[name='altApp']").value;
+  window.replaces = "adobeApps";
+  window.pricing = "pricing";
+  window.description = document.querySelector("[name='description']").value;
+  window.link = document.querySelector("[name='link']").value;
 
-  const submitContainer = document.querySelector("#submitContainer");
-  const submitBtn = document.querySelector("[type='submit']");
-
+  window.submitContainer = document.querySelector("#submitContainer");
+  window.submitBtn = document.querySelector("#submitContainer [type='submit']");
+  }
+  setVars();
   function validateForm() {
+    setVars();
+    
     if (
       !(title == "" ||
       description == "" ||
@@ -162,13 +166,16 @@ if (body.id == "submit") {
       getCheckedBoxes(pricing) == "" ||
       getCheckedBoxes(replaces) == "")
     ) {
-      submitBtn.style.cursor = "pointer";
+      submitContainer.style.cursor = "pointer";
+      submitBtn.style.pointerEvents = "auto";
       submitBtn.value = "submit";
+      console.log("valid");
       return true;
     } else {
-      submitContainer.style.cursor = "not-allowed";
+      submitContainer.style.cursor = "not-allowed !important";
       submitBtn.style.pointerEvents = "none";
       submitBtn.value = "fill all fields";
+      console.log("invalid");
       return false;
     }
   }
