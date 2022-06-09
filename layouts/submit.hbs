@@ -49,54 +49,58 @@
             required
           />
         </div>
+        <div id="leftRightContainer">
+          <div id="leftContainer">
+            <div id="pricingContainer">
+              <h2 id="pricing">Pricing</h2>
+              <div class="checkboxContainer" id="pricingChkboxContainer">
+                {{#each pricing}}
+                  <input
+                    type="checkbox"
+                    class="required_group2"
+                    name="pricing"
+                    value="{{this}}"
+                    id="{{this}}"
+                  />
+                  <label for="{{this}}">{{this}}</label>
+                {{/each}}
+              </div>
+            </div>
 
-        <div id="pricingContainer">
-          <h2 id="pricing">Pricing</h2>
-          <div class="checkboxContainer" id="pricingChkboxContainer">
-            {{#each pricing}}
-              <input
-                type="checkbox"
-                class="required_group2"
-                name="pricing"
-                value="{{this}}"
-                id="{{this}}"
-              />
-              <label for="{{this}}">{{this}}</label>
-            {{/each}}
+            <div id="descriptionContainer">
+              <textarea
+                name="description"
+                maxlength="220"
+                placeholder="Description..."
+                required
+              ></textarea>
+            </div>
           </div>
-        </div>
+          <div id="rightContainer">
+            <div id="replacesContainer">
+              <h2>replaces</h2>
+              <div class="checkboxContainer">
+                {{#each adobeApps}}
+                  <input
+                    id="{{this}}"
+                    type="checkbox"
+                    class="required_group1"
+                    name="adobeApps"
+                    value="{{this}}"
+                  />
+                  <label for="{{this}}">{{this}}</label>
+                {{/each}}
+              </div>
+            </div>
 
-        <div id="replacesContainer">
-          <h2>replaces</h2>
-          <div class="checkboxContainer">
-            {{#each adobeApps}}
-              <input
-                id="{{this}}"
-                type="checkbox"
-                class="required_group1"
-                name="adobeApps"
-                value="{{this}}"
-              />
-              <label for="{{this}}">{{this}}</label>
-            {{/each}}
-          </div>
-        </div>
-
-        <div id="descriptionContainer">
-          <textarea
-            name="description"
-            maxlength="220"
-            placeholder="Description..."
-            required
-          ></textarea>
-        </div>
-
-        <div id="linkSubmit">
-          <div id="linkContainer">
-            <input type="url" name="link" placeholder="Download Link" required />
-          </div>
-          <div id="submitContainer">
-            <input type="submit" value="fill all fields" />
+            <div id="linkSubmit">
+              <div id="linkContainer">
+                <input type="url" name="link" placeholder="Website Link" required />
+              </div>
+              <div id="submitContainer">
+                <input type="submit" value="fill all fields" />
+              </div>
+            </div>
           </div>
         </div>
     </main>

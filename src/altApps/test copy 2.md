@@ -1,7 +1,14 @@
 ---
 title: "test: this'll work!"
 adobeApps:
-  - ACR
+  - ACROBAT
+  - DW
+  - SUB
+  - AI
+  - LR
+  - PS
+  - XD
+  - OTHER
   - AE
 pricing:
   - free

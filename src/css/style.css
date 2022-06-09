@@ -27,7 +27,6 @@
   --style-border_btn-highlight: 3px solid var(--color-highlight);
   --style-border_btn: 3px solid var(--color-middle_light);
   --style-border-highlight-radius: 100vw;
-  
 }
 
 html {
@@ -365,6 +364,7 @@ nav #logo {
 
 #submit #replacesContainer {
   border-top: var(--style-border);
+  border-bottom: var(--style-border);
 }
 
 #submit input[type="checkbox"]:checked + label {
@@ -413,7 +413,6 @@ nav #logo {
   padding: 20px;
   height: 7em;
   border-top: var(--style-border);
-  border-bottom: var(--style-border);
 }
 
 #submit input[name="link"] {
@@ -437,7 +436,7 @@ nav #logo {
     --style-border: 5px solid var(--color-middle_light);
     --style-border_btn-highlight: 3px solid var(--color-highlight);
     --style-border_btn: 3px solid var(--color-middle_light);
-}
+  }
 
   #home main {
     display: grid;
@@ -455,13 +454,12 @@ nav #logo {
 
 /* desktop breakpoint */
 @media screen and (min-width: 999px) {
-
   .verticalLine {
     display: block;
     height: 100%;
     border-left: var(--style-border);
   }
-  
+
   nav {
     padding: 20px;
     width: 100%;
@@ -508,9 +506,12 @@ nav #logo {
     vertical-align: middle;
     border: none;
   }
-
-  #home [type="radio"] + span {
-    font-size: 2.25vh;
+  
+  #home [type="radio"] + span, #home [type="radio"]:checked + span, #submit input[type="checkbox"] + label {
+    font-size: 2.75em;
+    margin: 15px;
+    padding: 16px 28px;
+    border-width: 5px;
   }
 
   #filterAboutMenu {
@@ -532,7 +533,7 @@ nav #logo {
     padding: 0 25px;
     border: none !important;
   }
-  
+
   label {
     font-size: 0.5vw;
   }
@@ -608,63 +609,77 @@ nav #logo {
   #submit main {
     height: calc(100% - 5px);
   }
+
   #submit main form {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(6, min-content);
-  }
-
-  #submit main form #altAppContainer {
-    grid-column: 1 / span 2;
-    font-size: 2em;
-  }
-
-  #submit main form #replacesContainer {
-    border-top: none;
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 3;
-  }
-
-  #submit #descriptionContainer, #submit #pricingContainer {
-    border-right: var(--style-border);
-  }
-
-  #submit #pricingContainer #pricingChkboxContainer {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  #submit #altAppContainer {
+    font-size: 1.75em;
+  }
+
+  #submit #leftRightContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  #submit #leftContainer,
+  #submit #rightContainer {
     width: 100%;
   }
 
+  #submit #leftContainer {
+    border-right: var(--style-border);
+    display: flex;
+    flex-direction: column;
+  }
+
   #submit #descriptionContainer {
-    grid-column: 1 / span 1;
-    grid-row: 3 / span 4;
+    flex-grow: 1;
+  }
+
+  #submit #descriptionContainer textarea {
+    height: 100%;
+    font-size: 2em;
+  }
+
+  #submit #rightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #submit #replacesContainer {
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-bottom: none;
+  }
+
+  #submit .checkboxContainer {
+    flex-grow: 1;
+  }
+
+  #submit #pricingChkboxContainer {
+    justify-content: space-between !important;
   }
 
   #submit #linkSubmit {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    border-bottom: var(--style-border);
     border-top: var(--style-border);
-    align-self: end;
   }
 
   #submit #linkSubmit * {
     border: none;
+    font-size: 1.4em;
   }
 
-  #submit #linkSubmit #linkContainer {
+  #submit #linkContainer {
     width: 100%;
-  }
-  #submit #linkSubmit input[type="submit"] {
-    border-left: var(--style-border);
-  }
-
-  #submit label {
-    font-size: 1.5em;
-    padding: 12px 18px;
+    border-right: var(--style-border);
   }
 
 }
