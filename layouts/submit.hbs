@@ -40,39 +40,55 @@
     <main>
       <form>
         <div>
-          <input type="text" placeholder="App Name" name="altApp" maxlength="50" required />
+          <input
+            type="text"
+            placeholder="App Name"
+            name="altApp"
+            maxlength="50"
+            required
+          />
         </div>
         <div>
           <h2>Replaces</h2>
+          <div class="checkboxContainer">
+            {{#each adobeApps}}
+              <input
+                id="{{this}}"
+                type="checkbox"
+                class="required_group1"
+                name="adobeApps"
+                value="{{this}}"
+              />
+              <label for="{{this}}">{{this}}</label>
+            {{/each}}
+          </div>
+        </div>
+        <div>
+          <h2 id="pricing">Pricing</h2>
 
-          {{#each adobeApps}}
-            <input
-              type="checkbox"
-              class="required_group1"
-              name="adobeApps"
-              value="{{this}}"
-            />
-            <label for="{{this}}">{{this}}</label>
-          {{/each}}
+          <div class="checkboxContainer" id="pricingChkboxContainer">
+            {{#each pricing}}
+              <input
+                type="checkbox"
+                class="required_group2"
+                name="pricing"
+                value="{{this}}"
+                id="{{this}}"
+              />
+              <label for="{{this}}">{{this}}</label>
+            {{/each}}
+          </div>
         </div>
         <div>
-          <h2>Pricing</h2>
-			
-          {{#each pricing}}
-            <input
-              type="checkbox"
-              class="required_group2"
-              name="pricing"
-              value="{{this}}"
-            />
-            <label for="{{this}}">{{this}}</label>
-          {{/each}}
+          <textarea
+            name="description"
+            maxlength="220"
+            placeholder="Description..."
+            required
+          ></textarea>
         </div>
         <div>
-          <textarea name="description" maxlength="220" placeholder="Description..." required /></textarea>
-        </div>
-        <div>
-          <input type="url" name="link" placeholder="Download Link" required/>
+          <input type="url" name="link" placeholder="Download Link" required />
         </div>
         <div>
           <input type="submit" value="submit" />

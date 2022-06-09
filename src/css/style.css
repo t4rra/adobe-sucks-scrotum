@@ -22,6 +22,8 @@
   --font-body: "PT Mono", monospace;
 
   --style-border: 2px solid var(--color-middle_light);
+  --style-border-highlight: 2px solid var(--color-highlight);
+  --style-border-highlight-radius: 100vw;
 }
 
 html {
@@ -505,23 +507,99 @@ nav #logo {
   height: 100%; 
 }
 
-#submit input {
+#submit input, #submit textarea {
+  resize: none;
+  width: 100%;
+  text-transform: uppercase;
   background-color: var(--color-background);
   color: var(--color-foreground);
   height: 3em;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: var(--font-body);
-  border-bottom: var(--style-border);
-  padding: 10px;
+  border: none;
+  padding: 15px;
+  transition-duration: 0.4s;
+}
+
+#submit input:focus, #submit textarea:focus {
+  outline: none;
+  background-color: var(--color-middle_dark);
   transition-duration: 0.4s;
 }
 
 #submit [name="altApp"] {
-  width: 100%;
+  border-bottom: var(--style-border);
 }
 
-#submit [name="altApp"]:focus {
-  outline: none;
+#submit div h2 {
+  font-size: 1.25em;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: var(--style-border);
+}
+
+#submit #pricing {
+  border-top: var(--style-border);
+}
+
+#submit input[type=checkbox]:checked + label {
+  border-color: var(--color-highlight);
+  color: var(--color-foreground);
+  transition-duration: 0.2s;
+}
+
+#submit label {
+  display: inline-block;
+  border: var(--style-border);
+  border-radius: var(--style-border-highlight-radius);
+  width: min-content;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  color: var(--color-middle_light);
+  user-select: none;
+  transition-duration: 0.2s;
+  margin: 10px;
+}
+
+#submit label:hover {
+  background-color: var(--color-middle_dark);
+  transition-duration: 0.2s;
+  color: var(--color-foreground);
+}
+
+#submit input[type=checkbox] {
+  display: none;
+}
+
+#submit .checkboxContainer {
+  margin: 15px 0;
+}
+
+#submit .checkboxContainer#pricingChkboxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#submit textarea[name="description"] {
+  width: 100%;
+  padding: 20px;
+  height: 7em;
+  border-top: var(--style-border);
+  border-bottom: var(--style-border);
+}
+
+#submit input[name="link"] {
+  border-bottom: var(--style-border);
+}
+
+#submit input[type="submit"] {
+  border-bottom: var(--style-border);
+  transition-duration: 0.4s;
+}
+
+#submit input[type="submit"]:hover {
   background-color: var(--color-middle_dark);
   transition-duration: 0.4s;
 }
