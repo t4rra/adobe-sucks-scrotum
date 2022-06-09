@@ -71,7 +71,7 @@ if (document.querySelector("body").id == "home") {
 
 var menuBar = document.querySelector("#links");
 var body = document.querySelector("body");
-var positionOffset = 0;
+var positionOffset = 2;
 
 var desktopBreakpoint = window.matchMedia("(min-width: 999px)");
 

@@ -128,14 +128,12 @@ nav #logo {
 }
 
 #filterMenu {
-  /* min-height: 70vh; */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border-bottom: var(--style-border);
 }
 
 #filterMenu form {
-  width: 50%;
   height: min-content;
   padding-bottom: 15px;
   display: flex;
@@ -144,7 +142,7 @@ nav #logo {
 }
 
 #filterMenu #appFilter {
-  border-right: var(--style-border);
+  border-bottom: var(--style-border);
 }
 
 /* Thanks https://codepen.io/SitePoint/pen/VwNWJa */
@@ -601,6 +599,14 @@ nav #logo {
     flex-grow: 1;
   }
 
+  #filterMenu {
+    flex-direction: row;
+  }
+  
+  #filterMenu #appFilter {
+    border-right: var(--style-border);
+  }
+  
   /* submit page */
   #submit {
     height: calc(100vh - 95px);
