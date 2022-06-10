@@ -3,11 +3,10 @@ description: Suggest an alternative app to an Adobe app.
 body:
   - type: markdown
     attributes:
-    value: |
-      Please make sure all information is correct before submitting this form.<br>
-      If you don't see any text below, please go [here](https://ass.easun.me/submit) to fill out the form. It'll bring you back here with your information formatted and filled correctly. If you don't go through the form, I will not add your app.<br>
-      Thank you for understanding!
-
+      value: |
+        Please make sure all information is correct before submitting this form.<br>
+        If you don't see any text below, please go [here](https://ass.easun.me/submit) to fill out the form. It'll bring you back here with your information formatted and filled correctly. If you don't go through the form, I will not add your app.<br>
+        Thank you for understanding!
   - type: textarea
     id: generated-content
     attributes:
