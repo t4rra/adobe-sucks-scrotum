@@ -192,7 +192,7 @@ if (body.id == "submit") {
     const issueLink =
       "https://github.com/eaaasun/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative: " +
       title +
-      "&additional-comments=---%0D%0Atitle: " +
+      "&generated-content=---%0D%0Atitle: " +
       title +
       "%0D%0Adescription: " +
       formatted_description +
