@@ -14,3 +14,5 @@ If the above requirements are met, go [here](https://ass.easun.me/submit) and fi
 
 ## See something wrong with the site?
 Open an issue [here](https://github.com/eaaasun/adobe-sucks-scrotum/issues), and fill the form out. 
+
+###### Inspired by [xdanielart](https://twitter.com/XdanielArt/status/1259859435607994370)'s guide
