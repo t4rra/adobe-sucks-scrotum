@@ -1,10 +1,9 @@
 ---
-title: GIMP
+title: Sumo Paint
 description:
-pricing:
- - foss  
+pricing:  
  - free  
 adobeApps:
  - Photoshop
-link: https://gimp.org
+link: https://sumo.app/
 ---

@@ -287,6 +287,7 @@ nav #logo {
   margin: 5px 0 5px 10px;
   border-radius: var(--style-border-highlight-radius);
   height: min-content;
+  width: min-content;
 }
 
 .filterEl p {
@@ -384,6 +385,7 @@ nav #logo {
   transition-duration: 0.2s;
   margin: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 #submit label:hover {
@@ -448,10 +450,21 @@ nav #logo {
   #home [type="radio"] + span {
     font-size: 1.2em;
   }
+
+  #home .filterEl {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+  }
+
+  .filterEl p {
+    flex-grow: 1;
+  }
 }
 
 /* desktop breakpoint */
-@media screen and (min-width: 999px) {
+@media screen and (min-width: 1008px) {
   .verticalLine {
     display: block;
     height: 100%;
@@ -506,7 +519,7 @@ nav #logo {
   }
   
   #home [type="radio"] + span, #home [type="radio"]:checked + span, #submit input[type="checkbox"] + label {
-    font-size: 2.75em;
+    font-size: 1.5vw;
     margin: 15px;
     padding: 16px 28px;
     border-width: 5px;
@@ -583,13 +596,6 @@ nav #logo {
     grid-gap: 30px;
   }
 
-  .filterEl {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-  }
-
   .filterEl h2 {
     font-size: 1.5em;
   }
@@ -648,7 +654,7 @@ nav #logo {
 
   #submit #descriptionContainer textarea {
     height: 100%;
-    font-size: 2em;
+    font-size: 2vw;
   }
 
   #submit #rightContainer {
@@ -680,7 +686,7 @@ nav #logo {
 
   #submit #linkSubmit * {
     border: none;
-    font-size: 1.4em;
+    font-size: 1.4vw;
   }
 
   #submit #linkContainer {

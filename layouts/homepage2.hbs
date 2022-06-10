@@ -18,12 +18,6 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
-
-    <!-- anime.js -->
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
-    ></script>
   </head>
 
   <body id="home">
@@ -124,11 +118,9 @@
                 {{/each}}
               </div>
             </div>
-            {{#if description}}
               <p>{{ description }}</p>
-            {{/if}}
               <a
-                href="{{ downloadLink }}"
+                href="{{ link }}"
                 target="_blank"
               >Website</a>
             </div>

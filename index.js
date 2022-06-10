@@ -26,17 +26,17 @@ Metalsmith(__dirname)
     metadata({
       config: {
         adobeApps: [
-          "ACROBAT",
-          "AE",
-          "AN",
-          "AU",
-          "DW",
-          "ID",
-          "AI",
-          "LR",
-          "PS",
-          "PR",
-          "SUB",
+          "Acrobat",
+          "After Effects",
+          "Animate",
+          "Audition",
+          "Dreamweaver",
+          "InDesign",
+          "Illustrator",
+          "Lightroom",
+          "Photoshop",
+          "Premiere",
+          "Substance",
           "XD",
           "OTHER"
         ],

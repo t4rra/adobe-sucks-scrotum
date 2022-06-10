@@ -71,7 +71,7 @@ if (document.querySelector("body").id == "home") {
 
 var menuBar = document.querySelector("#links");
 var body = document.querySelector("body");
-var positionOffset = 2;
+var positionOffset = 0;
 
 var desktopBreakpoint = window.matchMedia("(min-width: 999px)");
 
@@ -186,8 +186,9 @@ if (body.id == "submit") {
     event.preventDefault();
 
     // replace all break lines with space
-    const formatted_description = description.replace(/\n/g, " ");
+    const formatted_description = description.replace(/\n/g, " ").replace(/;/g, ". ");
 
+    // --------------- CHANGE GH ISSUE LINK BEFORE MERGE ------------------
     const issueLink =
       "https://github.com/eaaasun/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative: " +
       title +
@@ -205,8 +206,6 @@ if (body.id == "submit") {
 
     if (validateForm() == true) {
       window.open(issueLink, "_blank");
-    } else {
-      console.log("cannot submit");
     }
   });
 }
