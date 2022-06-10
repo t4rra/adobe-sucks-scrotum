@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADOBE SUCKS (SCROTUM) - Github Issue Generator</title>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="./media/fonts/MonumentExtended.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+  </head>
+
+  <body id="submit">
+    <nav>
+      <div id="logo">
+        <h1>ADOBE SUCKS</h1>
+        <h6>(SCROTUM)</h6>
+      </div>
+    </nav>
+
+    <div id="links">
+      <div class="link">
+        <a href="../../build">HOME</a>
+      </div>
+      <div class="link">
+        <a href="#" style="pointer-events: none;">ADD APP</a>
+      </div>
+    </div>
+
+    <main>
+      <form>
+        <div id="altAppContainer">
+          <input
+            type="text"
+            placeholder="App Name*"
+            name="altApp"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div id="leftRightContainer">
+          <div id="leftContainer">
+            <div id="pricingContainer">
+              <h2 id="pricing">Pricing* (select ≥ 1)</h2>
+              <div class="checkboxContainer" id="pricingChkboxContainer">
+                {{#each pricing}}
+                  <input
+                    type="checkbox"
+                    class="required_group2"
+                    name="pricing"
+                    value="{{this}}"
+                    id="{{this}}"
+                  />
+                  <label for="{{this}}">{{this}}</label>
+                {{/each}}
+              </div>
+            </div>
+
+            <div id="descriptionContainer">
+              <textarea
+                name="description"
+                maxlength="220"
+                placeholder="Why should someone use this app, or anything people should know about this app? (optional but recommended)"
+                  pattern="[a-zA-Z0-9!@#$%^*_|]{6,25}"
+              ></textarea>
+            </div>
+          </div>
+          <div id="rightContainer">
+            <div id="replacesContainer">
+              <h2>replaces* (select ≥ 1)</h2>
+              <div class="checkboxContainer">
+                {{#each adobeApps}}
+                  <input
+                    id="{{this}}"
+                    type="checkbox"
+                    class="required_group1"
+                    name="adobeApps"
+                    value="{{this}}"
+                  />
+                  <label for="{{this}}">{{this}}</label>
+                {{/each}}
+              </div>
+            </div>
+
+            <div id="linkSubmit">
+              <div id="linkContainer">
+                <input type="url" name="link" placeholder="Website Link*" required />
+              </div>
+              <div id="submitContainer">
+                <input type="submit" value="fill required fields" />
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+
+</html>

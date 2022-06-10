@@ -1,0 +1,695 @@
+@import url(https://fonts.googleapis.com/css2?family=PT+Mono);
+
+* {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  box-sizing: border-box;
+}
+
+[data-visible="invisible"] {
+  opacity: 0;
+  display: none !important;
+}
+
+:root {
+  --color-background: #111516;
+  --color-middle_dark: #1e2324;
+  --color-middle_light: #93969c;
+  --color-foreground: #e8f3ed;
+  --color-highlight: #f55d3e;
+
+  --font-header: "Monument Extended", sans-serif;
+  --font-body: "PT Mono", monospace;
+
+  --style-border: 2px solid var(--color-middle_light);
+  /* --style-border-highlight: 2px solid var(--color-highlight); */
+  --style-border_btn-highlight: 3px solid var(--color-highlight);
+  --style-border_btn: 3px solid var(--color-middle_light);
+  --style-border-highlight-radius: 100vw;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1.75em;
+  font-style: normal;
+}
+
+p a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight);
+  text-decoration-thickness: 3px;
+}
+
+a {
+  color: var(--color-foreground);
+  text-decoration: none;
+}
+
+/* Navbar */
+nav #logo {
+  margin: 20px;
+}
+
+#links {
+  z-index: 69419;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  height: 3.5em;
+  display: flex;
+  border-top: var(--style-border);
+  border-bottom: var(--style-border);
+  background-color: var(--color-background);
+}
+
+#links .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+#links .link:first-of-type {
+  border-right: var(--style-border);
+}
+
+#links .link a {
+  font-size: 1.1em;
+  text-align: center;
+  padding: 0.9em 0;
+  font-family: var(--font-header);
+}
+
+/* header */
+[data-menu="hidden"] {
+  height: 0;
+}
+
+/* filter menu */
+#filterAboutMenu {
+  z-index: 69420;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+}
+
+#filterMenu {
+  display: flex;
+  flex-direction: column;
+  border-bottom: var(--style-border);
+}
+
+#filterMenu form {
+  height: min-content;
+  padding-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#filterMenu #appFilter {
+  border-bottom: var(--style-border);
+}
+
+/* Thanks https://codepen.io/SitePoint/pen/VwNWJa */
+
+#home [type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#home [type="radio"] + span {
+  font-family: var(--font-body);
+  color: var(--color-middle_light);
+  border: var(--style-border_btn);
+  border-radius: var(--style-border-highlight-radius);
+  width: min-content;
+  white-space: nowrap;
+  padding: 8px 14px;
+  margin: 15px;
+  font-size: 4vw;
+  display: block;
+  text-transform: uppercase;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#home [type="radio"] + span:hover {
+  background-color: var(--color-middle_dark);
+  color: var(--color-foreground);
+  transition-duration: 0.2s;
+}
+
+#home [type="radio"]:checked + span {
+  border: var(--style-border_btn-highlight);
+  color: var(--color-foreground);
+}
+
+#home [type="radio"]:checked + span:hover {
+  background-color: var(--color-background);
+  cursor: default;
+}
+
+/* about section */
+#about {
+  padding: 15px;
+}
+
+#about h1 {
+  font-size: 2.25em;
+  margin-bottom: 25px;
+}
+
+#about p {
+  font-size: 1em;
+}
+
+#about section {
+  margin: 75px 0;
+}
+
+#about section #madeBy {
+  text-align: right;
+  width: 100%;
+}
+
+/* no results */
+#noResult {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  text-align: center;
+}
+
+#noResult h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+#noResult p {
+  font-size: 1.2em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* main  */
+#home main {
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterEl {
+  border: var(--style-border);
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.filterEl h2 {
+  font-size: 1.15em;
+  padding: 15px;
+  border-bottom: var(--style-border);
+}
+
+.filterEl .tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: var(--style-border);
+}
+
+.filterEl .tags div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.filterEl .tags div:first-of-type {
+  border-right: var(--style-border);
+}
+
+.filterEl .tags div h5 {
+  font-family: var(--font-body);
+  padding: 5px 10px;
+  border: var(--style-border_btn-highlight);
+  margin: 5px 0 5px 10px;
+  border-radius: var(--style-border-highlight-radius);
+  height: min-content;
+  width: min-content;
+}
+
+.filterEl p {
+  padding: 15px;
+  font-size: 1em;
+  border-bottom: var(--style-border);
+}
+
+.filterEl a {
+  padding: 15px 0;
+  font-family: var(--font-header);
+  font-size: 1.1em;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  transition-duration: 0.2s;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-transform: uppercase;
+}
+
+.filterEl a:hover {
+  background-color: var(--color-middle_dark);
+  transition-duration: 0.4s;
+}
+
+.verticalLine {
+  display: none;
+}
+
+/* submit page */
+#submit main {
+  position: relative;
+}
+
+#submit form {
+  width: 100%;
+  height: 100%;
+}
+
+#submit input,
+#submit textarea {
+  resize: none;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  height: 3em;
+  font-size: 1.5em;
+  font-family: var(--font-body);
+  border: none;
+  padding: 15px;
+  transition-duration: 0.4s;
+}
+
+#submit input:focus,
+#submit textarea:focus {
+  outline: none;
+  background-color: var(--color-middle_dark);
+  transition-duration: 0.4s;
+}
+
+#submit [name="altApp"] {
+  border-bottom: var(--style-border);
+}
+
+#submit div h2 {
+  font-size: 1.25em;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: var(--style-border);
+}
+
+#submit #replacesContainer {
+  border-top: var(--style-border);
+  border-bottom: var(--style-border);
+}
+
+#submit input[type="checkbox"]:checked + label {
+  border-color: var(--color-highlight);
+  color: var(--color-foreground);
+  transition-duration: 0.2s;
+}
+
+#submit label {
+  display: inline-block;
+  border: var(--style-border_btn);
+  border-radius: var(--style-border-highlight-radius);
+  width: min-content;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  color: var(--color-middle_light);
+  user-select: none;
+  transition-duration: 0.2s;
+  margin: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#submit label:hover {
+  background-color: var(--color-middle_dark);
+  transition-duration: 0.2s;
+  color: var(--color-foreground);
+}
+
+#submit input[type="checkbox"] {
+  display: none;
+}
+
+#submit .checkboxContainer {
+  margin: 10px 5px;
+}
+
+#submit .checkboxContainer#pricingChkboxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#submit textarea[name="description"] {
+  width: 100%;
+  padding: 20px;
+  height: 7em;
+  border-top: var(--style-border);
+}
+
+#submit input[name="link"] {
+  border-bottom: var(--style-border);
+}
+
+#submit input[type="submit"] {
+  border-bottom: var(--style-border);
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#submit input[type="submit"]:hover {
+  background-color: var(--color-middle_dark);
+  transition-duration: 0.4s;
+}
+
+/* tablet breakpoint */
+@media screen and (min-width: 650px) {
+  :root {
+    --style-border: 5px solid var(--color-middle_light);
+    --style-border_btn-highlight: 3px solid var(--color-highlight);
+    --style-border_btn: 3px solid var(--color-middle_light);
+  }
+
+  #home main {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    margin: 0 5vw;
+    grid-gap: 30px;
+  }
+
+  #home [type="radio"] + span {
+    font-size: 1.2em;
+  }
+
+  #home .filterEl {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+  }
+
+  .filterEl p {
+    flex-grow: 1;
+  }
+}
+
+/* desktop breakpoint */
+@media screen and (min-width: 1008px) {
+  .verticalLine {
+    display: block;
+    border-left: var(--style-border);
+  }
+
+  nav {
+    padding: 20px;
+    width: 100%;
+    border-bottom: var(--style-border);
+    position: fixed;
+    background-color: var(--color-background);
+    z-index: 69419;
+  }
+
+  nav #logo {
+    margin: 0;
+  }
+
+  nav #logo h1 {
+    font-size: 2em;
+  }
+
+  nav #logo h6 {
+    font-size: 0.8em;
+  }
+
+  #links {
+    height: 6em;
+    width: min-content;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: none;
+    border-left: var(--style-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #links .link {
+    border: none;
+  }
+
+  #links .link a {
+    white-space: nowrap;
+    font-size: 1.25em;
+    text-align: center;
+    padding: 0 30px;
+    vertical-align: middle;
+    border: none;
+  }
+  
+  #home [type="radio"] + span, #home [type="radio"]:checked + span, #submit input[type="checkbox"] + label {
+    font-size: 1.5vw;
+    margin: 15px;
+    padding: 16px 28px;
+    border-width: 5px;
+  }
+
+  #filterAboutMenu {
+    display: flex;
+    flex-direction: row;
+    border-bottom: none;
+  }
+
+  #filterMenu {
+    width: 100%;
+    height: min-content;
+    border: none;
+  }
+
+  #filterMenu form {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 25px;
+    border: none !important;
+  }
+
+  label {
+    font-size: 0.5vw;
+  }
+
+  #about {
+    height: 95%;
+    max-width: 50%;
+    margin: 0 50px;
+    margin-left: 25px;
+    padding-top: 25px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  #about h1 {
+    font-size: 2.25vw;
+  }
+
+  #about p {
+    font-size: 1.25vw;
+  }
+
+  #about section {
+    margin: 0;
+  }
+
+  #about section:last-of-type {
+    font-size: 1vw;
+    align-self: end;
+  }
+
+  #noResult {
+    width: 100%;
+  }
+
+  #noResult p,
+  #noResult h2 {
+    width: 30%;
+  }
+
+  #home main {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    margin: 0 5vw;
+    grid-gap: 30px;
+  }
+
+  .filterEl h2 {
+    font-size: 1.5em;
+  }
+
+  .filterEl p {
+    font-size: 1.15em;
+    flex-grow: 1;
+  }
+
+  #filterMenu {
+    flex-direction: row;
+  }
+  
+  #filterMenu #appFilter {
+    border-right: var(--style-border);
+  }
+  
+  /* submit page */
+  #submit {
+    height: calc(100vh - 95px);
+  }
+
+  #submit main {
+    height: calc(100% - 5px);
+  }
+
+  #submit main form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #submit #altAppContainer {
+    font-size: 1.75em;
+  }
+
+  #submit #leftRightContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  #submit #leftContainer,
+  #submit #rightContainer {
+    width: 100%;
+  }
+
+  #submit #leftContainer {
+    border-right: var(--style-border);
+    display: flex;
+    flex-direction: column;
+  }
+
+  #submit #descriptionContainer {
+    flex-grow: 1;
+  }
+
+  #submit #descriptionContainer textarea {
+    height: 100%;
+    font-size: 2vw;
+  }
+
+  #submit #rightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #submit #replacesContainer {
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-bottom: none;
+  }
+
+  #submit .checkboxContainer {
+    flex-grow: 1;
+  }
+
+  #submit #pricingChkboxContainer {
+    justify-content: space-between !important;
+  }
+
+  #submit #linkSubmit {
+    display: flex;
+    border-top: var(--style-border);
+  }
+
+  #submit #linkSubmit * {
+    border: none;
+    font-size: 1.4vw;
+  }
+
+  #submit #linkContainer {
+    width: 100%;
+    border-right: var(--style-border);
+  }
+
+}

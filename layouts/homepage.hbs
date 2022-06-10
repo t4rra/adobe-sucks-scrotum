@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADOBE SUCKS (SCROTUM)</title>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="./media/fonts/MonumentExtended.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  
+    <!-- anime.js -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+    ></script>
+
+  </head>
+
+  <body id="home">
+    <nav>
+      <div id="logo">
+        <h1>ADOBE SUCKS</h1>
+        <h6>(SCROTUM)</h6>
+      </div>
+    </nav>
+
+    <div id="links">
+      <div class="link">
+        <a id="aboutLink" href="#">MENU/FILTER</a>
+      </div>
+      <div class="link">
+        <a href="./submit">ADD APP</a>
+      </div>
+    </div>
+
+
+    <header>
+      <div id="filterAboutMenu" data-menu="hidden">
+        <div id="filterMenu">
+          <form id="appFilter" autocomplete="off">
+            <label for="button-all"><input
+                type="radio"
+                id="button-all"
+                name="mainFilter"
+                value="filterEl"
+                checked="true"
+              /><span>All Apps</span></label>
+            {{#each adobeApps}}
+              <label for="button-{{this}}">
+                <input type="radio" id="button-{{this}}" name="mainFilter" value="{{this}}"/>
+                <span>{{this}}</span>
+              </label>
+            {{/each}}
+          </form>
+          <div class="verticalLine"></div>
+        <form id="priceFilter" autocomplete="off">
+          <label for="filter-all"><input
+              type="radio"
+              id="filter-all"
+              name="secondaryFilter"
+              value="filterEl"
+              checked="true"
+            /><span>All Pricing</span></label>
+          {{#each pricing}}
+            <label for="filter-{{this}}"><input
+                type="radio"
+                id="filter-{{this}}"
+                name="secondaryFilter"
+                value="{{this}}"
+              /><span>{{this}}</span></label>
+          {{/each}}
+
+        </form>
+        <div class="verticalLine"></div>
+        </div>
+        <div id="about">
+          <section>
+            <h1>ADOBE SUCKS.</h1>
+            <p>They really do. They've had a chokehold on the industry for far too long. None of us can change that... at least not alone. If enough people use and share alternatives, it'll pressure Adobe to stop its complacency and will benefit the end user.</p>
+          </section>
+          <section>
+            <h1>DON'T PIRATE.</h1>
+            <p>
+              Please don't pirate. <br> 1) It's illegal. <br> 2) Piracy still benefits Adobe by increasing their market share. <br> 3) Smaller alternatives need your support to grow and become better than Adobe's offerings.</p>
+          </section>
+          <section>
+            <h1>WANT TO CONTRIBUTE?</h1>
+            <p>If you have a good alternative to an Adobe app, please use <a href="./submit">this</a> form to submit it. Make sure that the app uses a free or one-time payment model.</p>
+          </section>
+          <section>
+            <p id="madeBy">Another thing by <a href="https://easun.me" target="_blank">Easun.</a></p>
+          </section>
+        </div>
+      </div>
+    </header>
+    <div class="hidden" id="noResult">
+      <h2>No results!</h2>
+      <p>Please try a different combination of filters, or if an app you want isn't listed, add it through <a href="./submit">this</a> form.</p>
+    </div>
+    <main>
+      {{#if altApps}}
+        {{#each altApps}}
+          <div data-visible="" class="filterEl {{#each adobeApps}}{{this}} {{/each}}{{#each pricing}}{{this}} {{/each}}">
+            <h2>{{ title }}</h2>
+            <div class="tags">
+              <div class="replaces">
+                {{#each adobeApps}}
+                  <h5>{{this}}</h5>
+                {{/each}}
+              </div>
+              <div class="pricing">
+                {{#each pricing}}
+                  <h5>{{this}}</h5>
+                {{/each}}
+              </div>
+            </div>
+              <p>{{ description }}</p>
+              <a
+                href="{{ link }}"
+                target="_blank"
+              >Website</a>
+            </div>
+          </div>
+
+        {{/each}}
+      {{/if}}
+    </main>
+    <footer>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+
+</html>
