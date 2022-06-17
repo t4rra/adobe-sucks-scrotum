@@ -192,7 +192,7 @@ if (body.id == "submit") {
     const issueLink =
       "https://github.com/eaaasun/adobe-sucks-scrotum/issues/new?assignees=&labels=&template=appsuggest.yaml&title=Alternative: " +
       title +
-      "&generated-content=---%0D%0Atitle: " +
+      "&generated-content=```%0D%0A---%0D%0Atitle: " +
       title +
       "%0D%0Adescription: " +
       formatted_description +
@@ -202,7 +202,7 @@ if (body.id == "submit") {
       getCheckedBoxes(replaces) +
       "%0D%0Alink: " +
       link +
-      "%0D%0A---%0D%0A";
+      "%0D%0A---%0D%0A```";
 
     if (validateForm() == true) {
       window.open(issueLink, "_blank");
