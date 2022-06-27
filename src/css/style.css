@@ -23,7 +23,6 @@
   --font-body: "PT Mono", monospace;
 
   --style-border: 2px solid var(--color-middle_light);
-  /* --style-border-highlight: 2px solid var(--color-highlight); */
   --style-border_btn-highlight: 3px solid var(--color-highlight);
   --style-border_btn: 3px solid var(--color-middle_light);
   --style-border-highlight-radius: 100vw;
@@ -432,12 +431,6 @@ nav #logo {
 
 /* tablet breakpoint */
 @media screen and (min-width: 650px) {
-  :root {
-    --style-border: 5px solid var(--color-middle_light);
-    --style-border_btn-highlight: 3px solid var(--color-highlight);
-    --style-border_btn: 3px solid var(--color-middle_light);
-  }
-
   #home main {
     display: grid;
     position: relative;

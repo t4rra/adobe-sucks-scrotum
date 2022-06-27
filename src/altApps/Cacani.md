@@ -5,5 +5,5 @@ pricing:
  - paid
 adobeApps:
  - Animate
-link: https://www.wickeditor.com
+link: https://cacani.sg
 ---
