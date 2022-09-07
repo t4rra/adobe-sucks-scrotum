@@ -16,3 +16,18 @@ If the above requirements are met, go [here](https://ass.easun.me/submit) and fi
 Open an issue [here](https://github.com/eaaasun/adobe-sucks-scrotum/issues), and fill the form out. 
 
 ###### Inspired by [xdanielart](https://twitter.com/XdanielArt/status/1259859435607994370)'s guide
+
+## Development
+
+Setup:
+
+```bash
+npm i && npm i -g serve
+```
+
+Build & serve:
+```bash
+npm start && npm run serve
+```
+
+Then open your browser at http://localhost:3000
