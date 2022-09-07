@@ -1,9 +1,8 @@
 const Metalsmith = require("metalsmith"),
-  markdown = require("metalsmith-markdown"),
-  layouts = require("metalsmith-layouts"),
+  markdown = require("@metalsmith/markdown"),
+  layouts = require("@metalsmith/layouts"),
   permalinks = require("@metalsmith/permalinks"),
-  collections = require("metalsmith-collections"),
-  metadata = require("metalsmith-collection-metadata");
+  collections = require("@metalsmith/collections");
 
 Metalsmith(__dirname)
   .metadata({
@@ -17,33 +16,33 @@ Metalsmith(__dirname)
   .use(
     collections({
       altApps: "altApps/*.md",
-      config: "*.md",
+      config: {
+        pattern: "*.md",
+        metadata: {
+          adobeApps: [
+            "Acrobat",
+            "After Effects",
+            "Animate",
+            "Audition",
+            "Dreamweaver",
+            "InDesign",
+            "Illustrator",
+            "Lightroom",
+            "Photoshop",
+            "Premiere",
+            "Substance",
+            "XD",
+            "OTHER"
+          ],
+          pricing: ["foss", "free", "paid"],
+        }
+      }
     })
   )
   .use(markdown())
-  .use(permalinks())
-  .use(
-    metadata({
-      config: {
-        adobeApps: [
-          "Acrobat",
-          "After Effects",
-          "Animate",
-          "Audition",
-          "Dreamweaver",
-          "InDesign",
-          "Illustrator",
-          "Lightroom",
-          "Photoshop",
-          "Premiere",
-          "Substance",
-          "XD",
-          "OTHER"
-        ],
-        pricing: ["foss", "free", "paid"],
-      },
-    })
-  )
+  .use(permalinks({
+    relative: false
+  }))
   .use(
     layouts({
       engineOptions: {
